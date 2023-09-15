@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'Graphik';
+  src: url('../../../../Graphik_Collection/Graphik-Family/Graphik-Black-Trial.otf') format('otf'),
+  /* Add other font formats if needed */
+}
+
+.gradient-text {
+  background-image: linear-gradient(to bottom,  #1F347A 68.02%, #1A2A67 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.gradient-text1 {
+    background-image: linear-gradient(to bottom,  #0491F6 0%, #1F347A 68.02%, #1A2A67 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+

@@ -1,0 +1,10 @@
+.navbar {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    top: -100px;
+    width: 100%;
+    transition: top 0.3s ease-in-out; /* Use ease-in-out for smooth animation */
+}
