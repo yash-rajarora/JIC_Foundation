@@ -38,11 +38,11 @@ function Navbar() {
           align="center"
           display={{ base: "none", md: "flex" }}
         >
-          <Link href="#" color='white'>About Us</Link>
+          <Link href="#about" color='white'>About Us</Link>
           <Link href="JicBlogs" color='white'>JIC Blogs</Link>
-          <Link href="#" color='white'>Our Program</Link>
-          <Link href="#" color='white'>Startups</Link>
-          <Link href="#" color='white'>Team</Link>
+          <Link href="#OurProgram" color='white'>Our Program</Link>
+          <Link href="#startup" color='white'>Startups</Link>
+          <Link href="#team" color='white'>Team</Link>
           <Button
             as={'a'}
             display={{ base: 'none', md: 'inline-flex' }}
