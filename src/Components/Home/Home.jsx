@@ -16,9 +16,9 @@ import {
   Card,
   CardBody,
   Divider,
-  Button,
-  Link,
+  Button
 } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import back from "../../Assets/bg.png";
@@ -223,6 +223,7 @@ function HomePage() {
       </section>
 
       {/* JIC Blogs Section */}
+      <section id="JicBlogs">
       <Box bg="#F2F4F7">
         <Box py={14}>
           <Container>
@@ -238,7 +239,7 @@ function HomePage() {
           </Container>
         </Box>
         <Box textAlign={["center", "right"]} pr={[0, "11%"]} pb={10}>
-          <Link href="JicBlogs">
+          <Link to="JicBlogs">
             <Button
               bg={"white"}
               _hover={{
@@ -330,6 +331,7 @@ function HomePage() {
           </Grid>
         </Box>
       </Box>
+      </section>
 
       {/* Our Program Section */}
 

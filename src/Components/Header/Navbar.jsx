@@ -39,7 +39,7 @@ function Navbar() {
           display={{ base: "none", md: "flex" }}
         >
           <Link href="#about" color='white'>About Us</Link>
-          <Link href="JicBlogs" color='white'>JIC Blogs</Link>
+          <Link href="#JicBlogs" color='white'>JIC Blogs</Link>
           <Link href="#OurProgram" color='white'>Our Program</Link>
           <Link href="#startup" color='white'>Startups</Link>
           <Link href="#team" color='white'>Team</Link>
