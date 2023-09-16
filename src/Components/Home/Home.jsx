@@ -195,8 +195,8 @@ function HomePage() {
           justifyContent={["center", "flex-end"]}
           flexDirection={["column", "row"]}
         >
-          <Box pt={["0", "10%"]} pr={["5%", "20%"]} pl={["5%", ""]}>
-            <Box w={["400px"]}>
+          <Box pt={["0", "10%"]} pr={["5%", "20%"]} pl={["5%", ""]} overflowX="hidden"> 
+            <Box maxW={["100%", "400px"]}>
               <Text
                 className="gradient-text"
                 fontSize="48px"
