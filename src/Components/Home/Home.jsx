@@ -186,20 +186,16 @@ function HomePage() {
       {/* About Section */}
 
       <section id="about">
-      <Box
-        w="full"
-        h={["100vh", "56.25vw"]}
-        backgroundImage={["none",`url(${back2})`]}
-        backgroundSize="cover"
-        display="flex"
-        justifyContent={["center", "flex-end"]}
-        flexDirection={["column", "row"]}
-      >
         <Box
-          pt={["0", "10%"]}
-          pr={["0", "20%"]}
-          pl={["10%",""]}
+          w="full"
+          h={["100vh", "56.25vw"]}
+          backgroundImage={["none", `url(${back2})`]}
+          backgroundSize="cover"
+          display="flex"
+          justifyContent={["center", "flex-end"]}
+          flexDirection={["column", "row"]}
         >
+          <Box pt={["0", "10%"]} pr={["0", "20%"]} pl={["10%", ""]}>
             <Box w={["400px"]}>
               <Text
                 className="gradient-text"
@@ -228,111 +224,113 @@ function HomePage() {
 
       {/* JIC Blogs Section */}
       <Box bg="#F2F4F7">
-      <Box py={14}>
-        <Container>
-          <Heading as="h1" size="4xl" mb={8} textAlign="center">
-            <Text
-              fontWeight="700"
-              className="gradient-text1"
-              fontFamily={"sans-serif"}
+        <Box py={14}>
+          <Container>
+            <Heading as="h1" size="4xl" mb={8} textAlign="center">
+              <Text
+                fontWeight="700"
+                className="gradient-text1"
+                fontFamily={"sans-serif"}
+              >
+                JIC BLOGS
+              </Text>
+            </Heading>
+          </Container>
+        </Box>
+        <Box textAlign={["center", "right"]} pr={[0, "11%"]} pb={10}>
+        <Link href="JicBlogs">
+          
+          <Button
+            bg={"white"}
+            _hover={{
+              bg: "#1D2939",
+              color: "white",
+            }}
             >
-              JIC BLOGS
-            </Text>
-          </Heading>
-        </Container>
+            View more
+          </Button>
+        </Link>
+        </Box>
+        <Box pb={20} pr={[10, 40]} pl={[10, 40]}>
+          <Grid templateColumns={["1fr", "repeat(3, 1fr)"]} gap={6}>
+            <GridItem>
+              <Card w="full">
+                <CardBody
+                  transition="background-color 0.3s ease-in-out"
+                  _hover={{
+                    bg: "#1D2939",
+                    color: "white",
+                  }}
+                >
+                  <Stack mt="6" spacing="3">
+                    <Text fontSize="8px">AUGUST 13, 2021</Text>
+                    <Heading size="md">
+                      10 Hilarious Cartoons That Depict Real-Life Problems of
+                      Programmers
+                    </Heading>
+                    <Image
+                      src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                      alt="Green double couch with wooden legs"
+                      borderRadius="lg"
+                    />
+                  </Stack>
+                </CardBody>
+                <Divider />
+              </Card>
+            </GridItem>
+            <GridItem>
+              <Card w="full">
+                <CardBody
+                  transition="background-color 0.3s ease-in-out"
+                  _hover={{
+                    bg: "#1D2939",
+                    color: "white",
+                  }}
+                >
+                  <Stack mt="6" spacing="3">
+                    <Text fontSize="8px">AUGUST 13, 2021</Text>
+                    <Heading size="md">
+                      10 Hilarious Cartoons That Depict Real-Life Problems of
+                      Programmers
+                    </Heading>
+                    <Image
+                      src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                      alt="Green double couch with wooden legs"
+                      borderRadius="lg"
+                    />
+                  </Stack>
+                </CardBody>
+                <Divider />
+              </Card>
+            </GridItem>
+            <GridItem>
+              <Card w="full">
+                <CardBody
+                  transition="background-color 0.3s ease-in-out"
+                  _hover={{
+                    bg: "#1D2939",
+                    color: "white",
+                  }}
+                >
+                  <Stack mt="6" spacing="3">
+                    <Text fontSize="8px">AUGUST 13, 2021</Text>
+                    <Heading size="md">
+                      10 Hilarious Cartoons That Depict Real-Life Problems of
+                      Programmers
+                    </Heading>
+                    <Image
+                      src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                      alt="Green double couch with wooden legs"
+                      borderRadius="lg"
+                    />
+                  </Stack>
+                </CardBody>
+                <Divider />
+              </Card>
+            </GridItem>
+          </Grid>
+        </Box>
       </Box>
-      <Box textAlign={["center", "right"]} pr={[0, "11%"]} pb={10}>
-        <Button
-          bg={"white"}
-          _hover={{
-            bg: "#1D2939",
-            color: "white",
-          }}
-        >
-          View more
-        </Button>
-      </Box>
-      <Box pb={20} pr={[10,40]} pl={[10,40]}>
-        <Grid templateColumns={["1fr", "repeat(3, 1fr)"]} gap={6}>
-          <GridItem>
-            <Card w="full">
-              <CardBody
-                transition="background-color 0.3s ease-in-out"
-                _hover={{
-                  bg: "#1D2939",
-                  color: "white",
-                }}
-              >
-                <Stack mt="6" spacing="3">
-                  <Text fontSize="8px">AUGUST 13, 2021</Text>
-                  <Heading size="md">
-                    10 Hilarious Cartoons That Depict Real-Life Problems of
-                    Programmers
-                  </Heading>
-                  <Image
-                    src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                    alt="Green double couch with wooden legs"
-                    borderRadius="lg"
-                  />
-                </Stack>
-              </CardBody>
-              <Divider />
-            </Card>
-          </GridItem>
-          <GridItem>
-            <Card w="full">
-              <CardBody
-                transition="background-color 0.3s ease-in-out"
-                _hover={{
-                  bg: "#1D2939",
-                  color: "white",
-                }}
-              >
-                <Stack mt="6" spacing="3">
-                  <Text fontSize="8px">AUGUST 13, 2021</Text>
-                  <Heading size="md">
-                    10 Hilarious Cartoons That Depict Real-Life Problems of
-                    Programmers
-                  </Heading>
-                  <Image
-                    src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                    alt="Green double couch with wooden legs"
-                    borderRadius="lg"
-                  />
-                </Stack>
-              </CardBody>
-              <Divider />
-            </Card>
-          </GridItem>
-          <GridItem>
-            <Card w="full">
-              <CardBody
-                transition="background-color 0.3s ease-in-out"
-                _hover={{
-                  bg: "#1D2939",
-                  color: "white",
-                }}
-              >
-                <Stack mt="6" spacing="3">
-                  <Text fontSize="8px">AUGUST 13, 2021</Text>
-                  <Heading size="md">
-                    10 Hilarious Cartoons That Depict Real-Life Problems of
-                    Programmers
-                  </Heading>
-                  <Image
-                    src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                    alt="Green double couch with wooden legs"
-                    borderRadius="lg"
-                  />
-                </Stack>
-              </CardBody>
-              <Divider />
-            </Card>
-          </GridItem>
-        </Grid>
-      </Box>
-    </Box>
-
 
       {/* Our Program Section */}
 
@@ -357,82 +355,109 @@ function HomePage() {
               they can evolve faster, better.
             </Text>
           </Box>
-          <Box py={20} px={"22%"}>
-            <Grid templateColumns="repeat(2, 1fr)" gap={6}>
+          <Box py={20} px={["10%", "15%", "22%"]}>
+            <Grid
+              templateColumns={["repeat(1, 1fr)", "repeat(2, 1fr)"]}
+              gap={[4, 6]}
+            >
               <GridItem
-                w="408px"
-                h="80px"
+                w={["100%", "408px"]}
+                h="60px"
                 bg={"white"}
                 color={"black"}
                 rounded="lg"
+                _hover={{
+                  bg: "#1D2939",
+                  color: "white",
+                }}
               >
-                <Box textAlign="center" pt="5">
-                  <Text fontSize="27" fontWeight="600">
+                <Box textAlign="center" pt="2">
+                  <Text fontSize={["24px", "27px"]} fontWeight="600">
                     KHOJ: The Startup Conclave
                   </Text>
                 </Box>
               </GridItem>
               <GridItem
-                w="408px"
-                h="80px"
+                w={["100%", "408px"]}
+                h="60px"
                 bg={"white"}
                 color={"black"}
                 rounded="lg"
+                _hover={{
+                  bg: "#1D2939",
+                  color: "white",
+                }}
               >
-                <Box textAlign="center" pt="5">
-                  <Text fontSize="27" fontWeight="600">
+                <Box textAlign="center" pt="2">
+                  <Text fontSize={["24px", "27px"]} fontWeight="600">
                     Leader's Talk
                   </Text>
                 </Box>
               </GridItem>
               <GridItem
-                w="408px"
-                h="80px"
+                w={["100%", "408px"]}
+                h="60px"
                 bg={"white"}
                 color={"black"}
                 rounded="lg"
+                _hover={{
+                  bg: "#1D2939",
+                  color: "white",
+                }}
               >
-                <Box textAlign="center" pt="5">
-                  <Text fontSize="27" fontWeight="600">
+                <Box textAlign="center" pt="2">
+                  <Text fontSize={["24px", "27px"]} fontWeight="600">
                     Incubation Program
                   </Text>
                 </Box>
               </GridItem>
               <GridItem
-                w="408px"
-                h="80px"
+                w={["100%", "408px"]}
+                h="60px"
                 bg={"white"}
                 color={"black"}
                 rounded="lg"
+                _hover={{
+                  bg: "#1D2939",
+                  color: "white",
+                }}
               >
-                <Box textAlign="center" pt="5">
-                  <Text fontSize="27" fontWeight="600">
+                <Box textAlign="center" pt="2">
+                  <Text fontSize={["24px", "27px"]} fontWeight="600">
                     Induction Program
                   </Text>
                 </Box>
               </GridItem>
               <GridItem
-                w="408px"
-                h="80px"
+                w={["100%", "408px"]}
+                h="60px"
                 bg={"white"}
                 color={"black"}
                 rounded="lg"
+                _hover={{
+                  bg: "#1D2939",
+                  color: "white",
+                }}
               >
-                <Box textAlign="center" pt="5">
-                  <Text fontSize="27" fontWeight="600">
+                <Box textAlign="center" pt="2">
+                  <Text fontSize={["24px", "27px"]} fontWeight="600">
                     Virtual Accelerator
                   </Text>
                 </Box>
               </GridItem>
               <GridItem
-                w="408px"
-                h="80px"
+                w={["100%", "408px"]}
+                h="60px"
                 bg={"white"}
                 color={"black"}
                 rounded="lg"
+                _hover={{
+                  bg: "#1D2939",
+                  color: "white",
+                }}
               >
-                <Box textAlign="center" pt="5">
-                  <Text fontSize="27" fontWeight="600">
+                <Box textAlign="center" pt="2">
+                  <Text fontSize={["24px", "27px"]} fontWeight="600">
                     Accelerator Program
                   </Text>
                 </Box>
@@ -454,46 +479,144 @@ function HomePage() {
           <Box py={14} px={"17%"} textAlign="center">
             <Grid templateColumns="repeat(7, 1fr)">
               <GridItem>
-                <Image src={startup1} />
+                <Box
+                  as="div"
+                  _hover={{ transform: "scale(1.1)" }}
+                  _active={{ transform: "scale(0.9)" }}
+                  transition="transform 0.3s"
+                >
+                  <Image src={startup1} />
+                </Box>
               </GridItem>
               <GridItem>
-                <Image src={startup2} />
+                <Box
+                  as="div"
+                  _hover={{ transform: "scale(1.1)" }}
+                  _active={{ transform: "scale(0.9)" }}
+                  transition="transform 0.3s"
+                >
+                  <Image src={startup2} />
+                </Box>
               </GridItem>
               <GridItem>
-                <Image src={startup3} />
+                <Box
+                  as="div"
+                  _hover={{ transform: "scale(1.1)" }}
+                  _active={{ transform: "scale(0.9)" }}
+                  transition="transform 0.3s"
+                >
+                  <Image src={startup3} />
+                </Box>
               </GridItem>
               <GridItem>
-                <Image src={startup4} />
+                <Box
+                  as="div"
+                  _hover={{ transform: "scale(1.1)" }}
+                  _active={{ transform: "scale(0.9)" }}
+                  transition="transform 0.3s"
+                >
+                  <Image src={startup4} />
+                </Box>
               </GridItem>
               <GridItem>
-                <Image src={startup5} />
+                <Box
+                  as="div"
+                  _hover={{ transform: "scale(1.1)" }}
+                  _active={{ transform: "scale(0.9)" }}
+                  transition="transform 0.3s"
+                >
+                  <Image src={startup5} />
+                </Box>
               </GridItem>
               <GridItem>
-                <Image src={startup6} />
+                <Box
+                  as="div"
+                  _hover={{ transform: "scale(1.1)" }}
+                  _active={{ transform: "scale(0.9)" }}
+                  transition="transform 0.3s"
+                >
+                  <Image src={startup6} />
+                </Box>
               </GridItem>
               <GridItem>
-                <Image src={startup7} />
+                <Box
+                  as="div"
+                  _hover={{ transform: "scale(1.1)" }}
+                  _active={{ transform: "scale(0.9)" }}
+                  transition="transform 0.3s"
+                >
+                  <Image src={startup7} />
+                </Box>
               </GridItem>
               <GridItem>
-                <Image src={startup8} />
+                <Box
+                  as="div"
+                  _hover={{ transform: "scale(1.1)" }}
+                  _active={{ transform: "scale(0.9)" }}
+                  transition="transform 0.3s"
+                >
+                  <Image src={startup8} />
+                </Box>
               </GridItem>
               <GridItem>
-                <Image src={startup9} />
+                <Box
+                  as="div"
+                  _hover={{ transform: "scale(1.1)" }}
+                  _active={{ transform: "scale(0.9)" }}
+                  transition="transform 0.3s"
+                >
+                  <Image src={startup9} />
+                </Box>
               </GridItem>
               <GridItem>
-                <Image src={startup10} />
+                <Box
+                  as="div"
+                  _hover={{ transform: "scale(1.1)" }}
+                  _active={{ transform: "scale(0.9)" }}
+                  transition="transform 0.3s"
+                >
+                  <Image src={startup10} />
+                </Box>
               </GridItem>
               <GridItem>
-                <Image src={startup11} />
+                <Box
+                  as="div"
+                  _hover={{ transform: "scale(1.1)" }}
+                  _active={{ transform: "scale(0.9)" }}
+                  transition="transform 0.3s"
+                >
+                  <Image src={startup11} />
+                </Box>
               </GridItem>
               <GridItem>
-                <Image src={startup12} />
+                <Box
+                  as="div"
+                  _hover={{ transform: "scale(1.1)" }}
+                  _active={{ transform: "scale(0.9)" }}
+                  transition="transform 0.3s"
+                >
+                  <Image src={startup12} />
+                </Box>
               </GridItem>
               <GridItem>
-                <Image src={startup13} />
+                <Box
+                  as="div"
+                  _hover={{ transform: "scale(1.1)" }}
+                  _active={{ transform: "scale(0.9)" }}
+                  transition="transform 0.3s"
+                >
+                  <Image src={startup13} />
+                </Box>
               </GridItem>
               <GridItem>
-                <Image src={startup14} />
+                <Box
+                  as="div"
+                  _hover={{ transform: "scale(1.1)" }}
+                  _active={{ transform: "scale(0.9)" }}
+                  transition="transform 0.3s"
+                >
+                  <Image src={startup14} />
+                </Box>
               </GridItem>
             </Grid>
           </Box>
