@@ -195,7 +195,7 @@ function HomePage() {
           justifyContent={["center", "flex-end"]}
           flexDirection={["column", "row"]}
         >
-          <Box pt={["0", "10%"]} pr={["0", "20%"]} pl={["10%", ""]}>
+          <Box pt={["0", "10%"]} pr={["5%", "20%"]} pl={["5%", ""]}>
             <Box w={["400px"]}>
               <Text
                 className="gradient-text"
@@ -238,18 +238,17 @@ function HomePage() {
           </Container>
         </Box>
         <Box textAlign={["center", "right"]} pr={[0, "11%"]} pb={10}>
-        <Link href="JicBlogs">
-          
-          <Button
-            bg={"white"}
-            _hover={{
-              bg: "#1D2939",
-              color: "white",
-            }}
+          <Link href="JicBlogs">
+            <Button
+              bg={"white"}
+              _hover={{
+                bg: "#1D2939",
+                color: "white",
+              }}
             >
-            View more
-          </Button>
-        </Link>
+              View more
+            </Button>
+          </Link>
         </Box>
         <Box pb={20} pr={[10, 40]} pl={[10, 40]}>
           <Grid templateColumns={["1fr", "repeat(3, 1fr)"]} gap={6}>
