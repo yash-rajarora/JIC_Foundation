@@ -104,7 +104,7 @@ function HomePage() {
             transition="background-color 0.3s ease-in-out"
             _hover={{
               bg: "white",
-              color: "black",
+              color: "#1D2939",
             }}
           >
             <Box textAlign="center" pt="5">
@@ -125,7 +125,7 @@ function HomePage() {
             transition="background-color 0.3s ease-in-out"
             _hover={{
               bg: "white",
-              color: "black",
+              color: "#1D2939",
             }}
           >
             <Box textAlign="center" pt="5">
@@ -147,7 +147,7 @@ function HomePage() {
             transition="background-color 0.3s ease-in-out"
             _hover={{
               bg: "white",
-              color: "black",
+              color: "#1D2939",
             }}
           >
             <Box textAlign="center" pt="5">
@@ -168,7 +168,7 @@ function HomePage() {
             transition="background-color 0.3s ease-in-out"
             _hover={{
               bg: "white",
-              color: "black",
+              color: "#1D2939",
             }}
           >
             <Box textAlign="center" pt="5">
@@ -259,7 +259,7 @@ function HomePage() {
               <CardBody
                 transition="background-color 0.3s ease-in-out"
                 _hover={{
-                  bg: "black",
+                  bg: "#1D2939",
                   color: "white",
                 }}
               >
@@ -284,7 +284,7 @@ function HomePage() {
               <CardBody
                 transition="background-color 0.3s ease-in-out"
                 _hover={{
-                  bg: "black",
+                  bg: "#1D2939",
                   color: "white",
                 }}
               >
@@ -309,7 +309,7 @@ function HomePage() {
               <CardBody
                 transition="background-color 0.3s ease-in-out"
                 _hover={{
-                  bg: "black",
+                  bg: "#1D2939",
                   color: "white",
                 }}
               >
