@@ -1,5 +1,5 @@
 // src/HomePage.js
-import React from "react";
+import React, { useState, useEffect  } from "react";
 import "./css/home.css";
 import {
   Box,
@@ -16,13 +16,24 @@ import {
   Card,
   CardBody,
   Divider,
-  Button
+  Button,
+  Link
 } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from "react-responsive-carousel";
+
+import tata from '../../Assets/06302022-image1-equitymaster.jpg'
+
+import team1 from '../../Assets/P1.png'
+import team2 from '../../Assets/P2.png'
+import team3 from '../../Assets/P3.png'
+import team4 from '../../Assets/P4.png'
+import team5 from '../../Assets/P5.png'
+
 import back from "../../Assets/bg.png";
+import backm from "../../Assets/bgmobile.jpg"
 import back2 from "../../Assets/bg121.png";
+import back2m from "../../Assets/bg121mobile.png"
+
 import startup1 from "../../Assets/startups/1.png";
 import startup2 from "../../Assets/startups/2.png";
 import startup3 from "../../Assets/startups/3.png";
@@ -39,6 +50,71 @@ import startup13 from "../../Assets/startups/13.png";
 import startup14 from "../../Assets/startups/14.png";
 
 function HomePage() {
+  const INTERVAL = 1400; 
+const MAX_VISIBILITY = 3;
+
+const Card1 = ({ imageSrc }) => (
+  <Box className='card1' >
+    <img src={imageSrc}alt="team" borderRadius={'xl'} />
+  </Box>
+);
+const carouselData = [
+  {
+    imageSrc: team1,
+  },
+  {
+    imageSrc: team2,
+  },
+  {
+    imageSrc: team3,
+  },
+  {
+    imageSrc: team4,
+  },
+  {
+    imageSrc: team5,
+  },  
+  // Add more objects for each card...
+];
+const Carousel = ({ children }) => {
+  const [active, setActive] = useState(2);
+  useEffect(() => {
+    const timer = setInterval(() => {
+      // Calculate the next active index
+      const nextIndex = (active + 1) % carouselData.length;
+      setActive(nextIndex);
+    }, INTERVAL);
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, [active, carouselData.length]);
+
+
+  return (
+    <Flex className='carousel' >
+      {carouselData.map((data, i) => (
+        <Flex
+          width={'80%'}
+          className='card-container'
+          flexDirection='column'
+          alignItems='center'
+          style={{
+            '--active': i === active ? 1 : 0,
+            '--offset': (active - i) / 3,
+            '--direction': Math.sign(active - i),
+            '--abs-offset': Math.abs(active - i) / 3,
+            pointerEvents: active === i ? 'auto' : 'none',
+            opacity: Math.abs(active - i) >= MAX_VISIBILITY ? 0 : 1,
+            display: Math.abs(active - i) > MAX_VISIBILITY ? 'none' : 'block',
+          }}
+        >
+          <Card1 {...data} key={i} />
+        </Flex>
+      ))}
+    </Flex>
+  );
+};
   return (
     <Box>
       {/* Hero Section */}
@@ -46,15 +122,15 @@ function HomePage() {
         w={"full"}
         h={"100vh"}
         pb={10}
-        backgroundImage={back}
-        backgroundSize={"fit"}
+        backgroundImage={[`url(${backm})`, `url(${back})`]}
+        backgroundSize={["contain","fit"]}
         backgroundPosition={" "}
       >
         <VStack
           w={"full"}
           justify={"center"}
           mr="20%"
-          mb="20%"
+          mb={["50%","20%"]}
           px={useBreakpointValue({ base: 4, md: 8 })}
         >
           <Stack maxW={"2xl"} align={"flex-start"} spacing={6}>
@@ -85,6 +161,7 @@ function HomePage() {
       <Box
         pt={["10", "35px"]}
         pb={["10", "35px"]}
+        pl={["5","0"]}
         display="flex"
         alignItems="center"
         justifyContent="center"
@@ -92,15 +169,16 @@ function HomePage() {
         flexDirection={["column", "row"]}
       >
         <Grid
-          templateColumns={["1fr", "1fr", "1fr 1fr 1fr 1fr"]}
+          templateColumns={["repeat(2, 1fr)", "repeat(4, 1fr)"]}
           gap={["20px", "20px", "47px", "47px"]}
         >
           <GridItem
-            w={["100%", "auto"]}
-            h="180px"
+            w={["90%", "180px"]}
+            h={["100%","180px"]}
             bgGradient="linear(to-b,  #0491F6 0%, #1F347A 68.02%, #1A2A67 100%)"
             color="white"
             rounded="lg"
+            boxShadow={"dark-lg"}
             transition="background-color 0.3s ease-in-out"
             _hover={{
               bg: "white",
@@ -108,7 +186,7 @@ function HomePage() {
             }}
           >
             <Box textAlign="center" pt="5">
-              <Text fontSize="48" fontWeight="600">
+              <Text fontSize={["40","48"]} fontWeight="600">
                 50+
               </Text>
               <Text fontSize="20" fontFamily="500">
@@ -117,11 +195,12 @@ function HomePage() {
             </Box>
           </GridItem>
           <GridItem
-            w={["100%", "auto"]}
+             w={["90%", "180px"]}
             h="180px"
             bgGradient="linear(to-b,  #0491F6 0%, #1F347A 68.02%, #1A2A67 100%)"
             color="white"
             rounded="lg"
+            boxShadow={"dark-lg"}
             transition="background-color 0.3s ease-in-out"
             _hover={{
               bg: "white",
@@ -129,21 +208,22 @@ function HomePage() {
             }}
           >
             <Box textAlign="center" pt="5">
-              <Text fontSize="48" fontWeight="600">
+              <Text fontSize={['40',"48"]} fontWeight="600">
                 60 Lac
               </Text>
-              <Text fontSize="20" fontFamily="500">
+              <Text fontSize="22" fontFamily="500">
                 Internal
-                <br /> Seed Funds
+                 Seed Funds
               </Text>
             </Box>
           </GridItem>
           <GridItem
-            w={["100%", "auto"]}
+             w={["90%", "180px"]}
             h="180px"
             bgGradient="linear(to-b,  #0491F6 0%, #1F347A 68.02%, #1A2A67 100%)"
             color="white"
             rounded="lg"
+            boxShadow={"dark-lg"}
             transition="background-color 0.3s ease-in-out"
             _hover={{
               bg: "white",
@@ -151,7 +231,7 @@ function HomePage() {
             }}
           >
             <Box textAlign="center" pt="5">
-              <Text fontSize="48" fontWeight="600">
+              <Text fontSize={["40","48"]} fontWeight="600">
                 1000+
               </Text>
               <Text fontSize="20" fontFamily="500">
@@ -160,11 +240,12 @@ function HomePage() {
             </Box>
           </GridItem>
           <GridItem
-            w={["100%", "auto"]}
+             w={["90%", "180px"]}
             h="180px"
             bgGradient="linear(to-b,  #0491F6 0%, #1F347A 68.02%, #1A2A67 100%)"
             color="white"
             rounded="lg"
+            boxShadow={"dark-lg"}
             transition="background-color 0.3s ease-in-out"
             _hover={{
               bg: "white",
@@ -172,7 +253,7 @@ function HomePage() {
             }}
           >
             <Box textAlign="center" pt="5">
-              <Text fontSize="48" fontWeight="600">
+              <Text fontSize={["40","48"]} fontWeight="600">
                 20+
               </Text>
               <Text fontSize="20" fontFamily="500">
@@ -187,10 +268,10 @@ function HomePage() {
 
       <section id="about">
         <Box
-          w="full"
+          w={["full"]}
           h={["100vh", "56.25vw"]}
-          backgroundImage={["none", `url(${back2})`]}
-          backgroundSize="cover"
+          backgroundImage={[`url(${back2m})`, `url(${back2})`]}
+          backgroundSize={["contain","cover"]}
           display="flex"
           justifyContent={["center", "flex-end"]}
           flexDirection={["column", "row"]}
@@ -204,7 +285,7 @@ function HomePage() {
               >
                 About JIC
               </Text>
-              <Text fontSize="18">
+              <Text fontSize={['12',"18"]}>
                 Academic excellence and vast experience in the field of research
                 and innovation at JECRC Foundation led to the inception of JECRC
                 Incubation Centre in 2021 with a vision to handhold the campus
@@ -225,11 +306,11 @@ function HomePage() {
       {/* JIC Blogs Section */}
       <section id="JicBlogs">
       <Box bg="#F2F4F7">
-        <Box py={14}>
+        <Box py={[10,14]}>
           <Container>
-            <Heading as="h1" size="4xl" mb={8} textAlign="center">
+            <Heading as="h1" size="4xl" mb={[0,8]} textAlign="center">
               <Text
-                fontWeight="700"
+                fontWeight="900"
                 className="gradient-text1"
                 fontFamily={"sans-serif"}
               >
@@ -251,82 +332,90 @@ function HomePage() {
             </Button>
           </Link>
         </Box>
-        <Box pb={20} pr={[10, 40]} pl={[10, 40]}>
+        <Box pb={20} pr={[5, 40]} pl={[5, 40]}>
           <Grid templateColumns={["1fr", "repeat(3, 1fr)"]} gap={6}>
             <GridItem>
+            <Link href='/Blog1'>
               <Card w="full">
                 <CardBody
                   transition="background-color 0.3s ease-in-out"
                   _hover={{
                     bg: "#1D2939",
                     color: "white",
+                    cursor: "pointer"
                   }}
                 >
                   <Stack mt="6" spacing="3">
                     <Text fontSize="8px">AUGUST 13, 2021</Text>
                     <Heading size="md">
-                      10 Hilarious Cartoons That Depict Real-Life Problems of
-                      Programmers
+                    FROM MUSIC TO BUSINESS: HOW TAYLOR SWIFT IS GOING TO EARN ₹1500 CRORES
+                    FROM HER UPCOMING TOUR.
+
                     </Heading>
                     <Image
-                      src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                      src="https://www.hindustantimes.com/ht-img/img/2023/08/04/550x309/California-Hotel-Strike-Taylor-Swift-0_1691137412346_1691137445960.jpg"
                       alt="Green double couch with wooden legs"
                       borderRadius="lg"
                     />
                   </Stack>
                 </CardBody>
-                <Divider />
+                
               </Card>
+              </Link>
             </GridItem>
             <GridItem>
+            <Link href='/Blog2'>
               <Card w="full">
                 <CardBody
                   transition="background-color 0.3s ease-in-out"
                   _hover={{
                     bg: "#1D2939",
                     color: "white",
+                    cursor: "pointer"
                   }}
                 >
                   <Stack mt="6" spacing="3">
                     <Text fontSize="8px">AUGUST 13, 2021</Text>
-                    <Heading size="md">
-                      10 Hilarious Cartoons That Depict Real-Life Problems of
-                      Programmers
+                    <Heading size="md" pb={'3'}>
+                      JOURNEY OF REDBULL AND MARKETING STRATEGY
                     </Heading>
                     <Image
-                      src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                      src="https://media.npr.org/assets/img/2022/10/23/ap22295802404552_custom-fe1a268512e52fb2b20472bbf854be21ff77edc3-s900-c85.webp"
                       alt="Green double couch with wooden legs"
                       borderRadius="lg"
                     />
                   </Stack>
                 </CardBody>
-                <Divider />
+                
               </Card>
+              </Link>
             </GridItem>
             <GridItem>
+            <Link href='/Blog3'>
               <Card w="full">
                 <CardBody
                   transition="background-color 0.3s ease-in-out"
                   _hover={{
                     bg: "#1D2939",
                     color: "white",
+                    cursor: "pointer"
                   }}
                 >
                   <Stack mt="6" spacing="3">
                     <Text fontSize="8px">AUGUST 13, 2021</Text>
-                    <Heading size="md">
-                      10 Hilarious Cartoons That Depict Real-Life Problems of
-                      Programmers
+                    <Heading size="md" pb={'9'}>
+                    Journey and obstacles : Tata grp
                     </Heading>
                     <Image
-                      src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                      src={tata}
                       alt="Green double couch with wooden legs"
                       borderRadius="lg"
                     />
                   </Stack>
                 </CardBody>
-                <Divider />
+                
               </Card>
+              </Link>
             </GridItem>
           </Grid>
         </Box>
@@ -337,10 +426,10 @@ function HomePage() {
 
       <section id="OurProgram">
         <Box bgGradient="linear(to-b,  #0491F6 0%, #1F347A 68.02%, #1A2A67 100%)">
-          <Box py={14}>
+          <Box pt={14}pb={[0,14]}>
             <Container>
               <Heading as="h1" size="3xl" mb={8} textAlign="center">
-                <Text fontWeight="700" color={"white"}>
+                <Text fontWeight="700" color={"white"} fontSize={['35','65']}>
                   OUR PROGRAMS
                 </Text>
               </Heading>
@@ -361,6 +450,7 @@ function HomePage() {
               templateColumns={["repeat(1, 1fr)", "repeat(2, 1fr)"]}
               gap={[4, 6]}
             >
+              <Link href="/Programs">
               <GridItem
                 w={["100%", "408px"]}
                 h="60px"
@@ -370,14 +460,16 @@ function HomePage() {
                 _hover={{
                   bg: "#1D2939",
                   color: "white",
+                  cursor:'pointer'
                 }}
               >
-                <Box textAlign="center" pt="2">
-                  <Text fontSize={["24px", "27px"]} fontWeight="600">
+                <Box textAlign="center" pt="4">
+                  <Text fontSize={["18px", "27px"]} fontWeight="700">
                     KHOJ: The Startup Conclave
                   </Text>
                 </Box>
               </GridItem>
+              </Link>
               <GridItem
                 w={["100%", "408px"]}
                 h="60px"
@@ -387,6 +479,7 @@ function HomePage() {
                 _hover={{
                   bg: "#1D2939",
                   color: "white",
+                  cursor:'pointer'
                 }}
               >
                 <Box textAlign="center" pt="2">
@@ -404,6 +497,7 @@ function HomePage() {
                 _hover={{
                   bg: "#1D2939",
                   color: "white",
+                  cursor:'pointer'
                 }}
               >
                 <Box textAlign="center" pt="2">
@@ -421,6 +515,7 @@ function HomePage() {
                 _hover={{
                   bg: "#1D2939",
                   color: "white",
+                  cursor:'pointer'
                 }}
               >
                 <Box textAlign="center" pt="2">
@@ -438,6 +533,7 @@ function HomePage() {
                 _hover={{
                   bg: "#1D2939",
                   color: "white",
+                  cursor:'pointer'
                 }}
               >
                 <Box textAlign="center" pt="2">
@@ -455,6 +551,7 @@ function HomePage() {
                 _hover={{
                   bg: "#1D2939",
                   color: "white",
+                  cursor:'pointer'
                 }}
               >
                 <Box textAlign="center" pt="2">
@@ -472,13 +569,13 @@ function HomePage() {
 
       <section id="startup">
         <Box bg="#F2F4F7">
-          <Box py={14} textAlign="center">
-            <Text fontSize="65" fontWeight="700" className="gradient-text1">
+          <Box pt={14} pb={[0,14]} textAlign="center">
+            <Text fontSize={["40","65"]} fontWeight="700" className="gradient-text1">
               INCUBATED STARTUPS
             </Text>
           </Box>
           <Box py={14} px={"17%"} textAlign="center">
-            <Grid templateColumns="repeat(7, 1fr)">
+            <Grid templateColumns={["repeat(3,1fr)","repeat(7, 1fr)"]}>
               <GridItem>
                 <Box
                   as="div"
@@ -628,39 +725,18 @@ function HomePage() {
 
       <section id="team">
         <Box>
+        <Box height={["60vh",'80vh']}>
           <Box py={14} textAlign="center">
-            <Text fontSize="65" fontWeight="700" className="gradient-text1">
+            <Text fontSize={["40","65" ]}fontWeight="700" className="gradient-text1">
               TEAM
             </Text>
           </Box>
-          <Box maxWidth="800px" margin="0 auto">
-            <Carousel
-              showThumbs={true}
-              infiniteLoop={true}
-              autoPlay={true}
-              interval={3000} // Set the interval (in milliseconds) for auto-advancing slides
-              stopOnHover={true} // Pause the auto-play on hover
-            >
-              <div>
-                <img
-                  src="https://i.pinimg.com/564x/ad/26/60/ad2660afb68666dd137afb32b5b5125f.jpg"
-                  alt="Image 1"
-                />
-              </div>
-              <div>
-                <img
-                  src="https://i.pinimg.com/564x/2d/da/48/2dda48be0dbd2cb168e95974a0d70e7e.jpg"
-                  alt="Image 2"
-                />
-              </div>
-              <div>
-                <img
-                  src="https://i.pinimg.com/564x/8f/12/0c/8f120cffea198788e158a80bbe97effd.jpg"
-                  alt="Image 3"
-                />
-              </div>
-            </Carousel>
-          </Box>
+        <Box w={["100%",'80%']} pl={'30%'}>
+        
+          <Carousel />
+      
+        </Box>
+      </Box>
         </Box>
       </section>
     </Box>

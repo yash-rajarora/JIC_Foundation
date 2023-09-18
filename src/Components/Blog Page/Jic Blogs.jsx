@@ -7,10 +7,12 @@ import {
     Text, 
     Box,
     Container,
+    Link,
 
   } from '@chakra-ui/react'
 import '../Home/css/home.css'
 import { motion } from 'framer-motion';
+import tata from '../../Assets/06302022-image1-equitymaster.jpg'
 
 const fadeInVariants = {
     hidden: { opacity: 0 },
@@ -42,6 +44,7 @@ export default function JicBlogs() {
 
         </Box>
         <Box py={'14'} px='20%' bg={'gray.100'}>
+            <Link href='/Blog1'>
             <Card
                 direction={{ base: 'column', sm: 'row' }}
                 overflow='hidden'
@@ -52,7 +55,8 @@ export default function JicBlogs() {
                 borderRadius={'xl'}
                 _hover={{
                     bg: '#1D2939',
-                    color: '#ffffff'
+                    color: '#ffffff',
+                    cursor:'pointer'
                   }}
             >
                 
@@ -60,7 +64,8 @@ export default function JicBlogs() {
                 <Stack>
                 <CardBody>
                     <Text py='2' color={'gray.500'} fontSize={'11'}>AUGUST 13, 2021 </Text>
-                    <Heading size='md'>10 Hilarious Cartoons That Depict Real-Life Problems of Programmers</Heading>
+                    <Heading size='md'>FROM MUSIC TO BUSINESS: HOW TAYLOR SWIFT IS GOING TO EARN ₹1500 CRORES
+                    FROM HER UPCOMING TOUR.</Heading>
             
                     <Text py='2' color={'gray.600'}>
                     Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.
@@ -71,10 +76,12 @@ export default function JicBlogs() {
                 borderRadius={'lg'}
                 objectFit='cover'
                 maxW={{ base: '100%', sm: '300px' }}
-                src='https://images.unsplash.com/photo-1667489022797-ab608913feeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60'
+                src="https://www.hindustantimes.com/ht-img/img/2023/08/04/550x309/California-Hotel-Strike-Taylor-Swift-0_1691137412346_1691137445960.jpg"
                 alt='Caffe Latte'
                 />
             </Card>
+            </Link>
+            <Link href='/Blog2'>
             <Card
                 direction={{ base: 'column', sm: 'row' }}
                 overflow='hidden'
@@ -84,7 +91,8 @@ export default function JicBlogs() {
                 my={5}
                 _hover={{
                     bg: '#1D2939',
-                    color: '#ffffff'
+                    color: '#ffffff',
+                    cursor:'pointer'
                   }}
             >
                 
@@ -92,7 +100,7 @@ export default function JicBlogs() {
                 <Stack>
                 <CardBody>
                     <Text py='2' color={'gray.500'} fontSize={'11'}>AUGUST 13, 2021 </Text>
-                    <Heading size='md'>10 Hilarious Cartoons That Depict Real-Life Problems of Programmers</Heading>
+                    <Heading size='md'>JOURNEY OF REDBULL AND MARKETING STRATEGY</Heading>
             
                     <Text py='2' color={'gray.600'}>
                     Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.
@@ -103,10 +111,12 @@ export default function JicBlogs() {
                 borderRadius={'lg'}
                 objectFit='cover'
                 maxW={{ base: '100%', sm: '300px' }}
-                src='https://images.unsplash.com/photo-1667489022797-ab608913feeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60'
+                src="https://media.npr.org/assets/img/2022/10/23/ap22295802404552_custom-fe1a268512e52fb2b20472bbf854be21ff77edc3-s900-c85.webp"
                 alt='Caffe Latte'
                 />
             </Card>
+            </Link>
+            <Link href='/Blog3'>
             <Card
                 direction={{ base: 'column', sm: 'row' }}
                 overflow='hidden'
@@ -116,7 +126,8 @@ export default function JicBlogs() {
                 my={5}
                 _hover={{
                     bg: '#1D2939',
-                    color: '#ffffff'
+                    color: '#ffffff',
+                    cursor:'pointer'
                   }}
             >
                 
@@ -124,7 +135,7 @@ export default function JicBlogs() {
                 <Stack>
                 <CardBody>
                     <Text py='2' color={'gray.500'} fontSize={'11'}>AUGUST 13, 2021 </Text>
-                    <Heading size='md'>10 Hilarious Cartoons That Depict Real-Life Problems of Programmers</Heading>
+                    <Heading size='md'>Journey and obstacles : Tata grp</Heading>
             
                     <Text py='2' color={'gray.600'}>
                     Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.
@@ -135,10 +146,11 @@ export default function JicBlogs() {
                 borderRadius={'lg'}
                 objectFit='cover'
                 maxW={{ base: '100%', sm: '300px' }}
-                src='https://images.unsplash.com/photo-1667489022797-ab608913feeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60'
+                src={tata}
                 alt='Caffe Latte'
                 />
             </Card>
+            </Link>
             
         </Box>
         </motion.div>
