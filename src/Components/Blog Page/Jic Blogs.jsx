@@ -28,22 +28,22 @@ export default function JicBlogs() {
         variants={fadeInVariants}
         transition={{ duration: 0.9 }} // Adjust the duration as needed
         >
-        <Box pt={'10%'}>
+        <Box pt={['40%','10%']}>
           <Container>
             <Heading as="h1" size="3xl" mb={8} textAlign="center">
-              <Text fontWeight='700' className='gradient-text1' fontSize={'65'} letterSpacing={'-1.972px'}>
+              <Text fontWeight='700' className='gradient-text1' fontSize={['40','65']} letterSpacing={'-1.972px'}>
               JIC BLOGS
               </Text>
             </Heading>
             </Container>
             <Box px={'20%' }textAlign='center' pb={'10'}>            
-            <Text fontSize={'24'}>
+            <Text fontSize={['18','24']}>
                 In this blog section, we aim to bring you insightful articles that shed light on the inner workings of such organizations, their challenges, triumphs, and the people behind their success
             </Text>
             </Box>
 
         </Box>
-        <Box py={'14'} px='20%' bg={'gray.100'}>
+        <Box py={'14'} px={['5','20%']} bg={'gray.100'}>
             <Link href='/Blog1'>
             <Card
                 direction={{ base: 'column', sm: 'row' }}

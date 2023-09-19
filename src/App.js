@@ -11,6 +11,7 @@ import Blog1 from './Components/Blog Page/Blogs/blog1';
 import Blog2 from './Components/Blog Page/Blogs/blog2';
 import Blog3 from './Components/Blog Page/Blogs/blog3';
 function App() {
+  
   window.addEventListener('contextmenu', e => {
     e.preventDefault();
   })
