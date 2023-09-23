@@ -15,7 +15,6 @@ import {
   GridItem,
   Card,
   CardBody,
-  Divider,
   Button,
   Link
 } from "@chakra-ui/react";
