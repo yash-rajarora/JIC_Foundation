@@ -16,11 +16,10 @@ import {
   Card,
   CardBody,
   Divider,
-  Button,
-  Link
+  Button
 } from "@chakra-ui/react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-
+import { Link } from "react-router-dom";
 import tata from '../../Assets/06302022-image1-equitymaster.jpg'
 
 import team1 from '../../Assets/P1.png'
@@ -320,7 +319,7 @@ const Carousel = ({ children }) => {
           </Container>
         </Box>
         <Box textAlign={["center", "right"]} pr={[0, "11%"]} pb={10}>
-          <Link to="JicBlogs">
+          <Link to="/JicBlogs">
             <Button
               bg={"white"}
               _hover={{
@@ -335,7 +334,7 @@ const Carousel = ({ children }) => {
         <Box pb={20} pr={[5, 40]} pl={[5, 40]}>
           <Grid templateColumns={["1fr", "repeat(3, 1fr)"]} gap={6}>
             <GridItem>
-            <Link href='/Blog1'>
+            <Link to="/Blog1">
               <Card w="full">
                 <CardBody
                   transition="background-color 0.3s ease-in-out"
@@ -364,7 +363,7 @@ const Carousel = ({ children }) => {
               </Link>
             </GridItem>
             <GridItem>
-            <Link href='/Blog2'>
+            <Link to='/Blog2'>
               <Card w="full">
                 <CardBody
                   transition="background-color 0.3s ease-in-out"
@@ -391,7 +390,7 @@ const Carousel = ({ children }) => {
               </Link>
             </GridItem>
             <GridItem>
-            <Link href='/Blog3'>
+            <Link to='/Blog3'>
               <Card w="full">
                 <CardBody
                   transition="background-color 0.3s ease-in-out"
@@ -450,7 +449,7 @@ const Carousel = ({ children }) => {
               templateColumns={["repeat(1, 1fr)", "repeat(2, 1fr)"]}
               gap={[4, 6]}
             >
-              <Link href="/Programs">
+              <Link to="/Programs">
               <GridItem
                 w={["100%", "408px"]}
                 h="60px"
@@ -724,21 +723,23 @@ const Carousel = ({ children }) => {
       {/* TEAM Section */}
 
       <section id="team">
-        <Box>
-        <Box height={["60vh",'80vh']}>
-          <Box py={14} textAlign="center">
-            <Text fontSize={["40","65" ]}fontWeight="700" className="gradient-text1">
-              TEAM
-            </Text>
-          </Box>
-        <Box w={["100%",'80%']} pl={'30%'}>
-        
-          <Carousel />
-      
-        </Box>
+  <Box overflow="hidden">
+    <Box height={["60vh", '80vh']}>
+      <Box py={[6, 14]} textAlign="center">
+        <Text fontSize={["30px", "40px", "65px"]} fontWeight="700" className="gradient-text1">
+          TEAM
+        </Text>
       </Box>
-        </Box>
-      </section>
+      <Box w={["100%", '80%']} px={[3, '30%']}>
+
+        <Carousel />
+
+      </Box>
+    </Box>
+  </Box>
+</section>
+
+
     </Box>
   );
 }
