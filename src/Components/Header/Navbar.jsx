@@ -3,7 +3,6 @@ import {
   Box,
   Flex,
   Spacer,
-  Link,
   useDisclosure,
   Button,
   Stack,
@@ -12,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import logo from '../../Assets/logojic.png'
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const { isOpen, onToggle } = useDisclosure(); // Use isOpen to determine if the mobile navigation is open or closed
@@ -30,7 +30,7 @@ function Navbar() {
       p="2"
     >
       <Flex maxW="6xl" mx="auto" alignItems="center">
-        <Link href="/"><Image src={logo} height='50px' /></Link>
+        <Link to="/"><Image src={logo} height='50px' /></Link>
         <Spacer />
         <Stack
           spacing={4}
@@ -38,11 +38,27 @@ function Navbar() {
           align="center"
           display={{ base: "none", md: "flex" }}
         >
-          <Link href="#about"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}}>About Us</Button></Link>
-          <Link href="JicBlogs"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}}>JIC Blogs</Button></Link>
-          <Link href="/Programs"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}}>Our Program</Button></Link>
-          <Link href="#startup"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}}>Startups</Button></Link>
-          <Link href="#team"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}}>Team</Button></Link>
+          <Link to="#about"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}}>About Us</Button></Link>
+          <Link to="JicBlogs"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}}>JIC Blogs</Button></Link>
+          <Link to="/Programs"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}}>Our Program</Button></Link>
+          <Link to="#startup"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}}>Startups</Button></Link>
+          <Link to="#team"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}}>Team</Button></Link>
+          <Link to="Contact">
+          <Button
+              as={'a'}
+              fontSize={'sm'}
+              fontWeight={600}
+              color={'black'}
+              bg={'white'}
+              href={'#'}
+              _hover={{
+                bg: '#1D2939',
+                color: 'white',
+              }}
+            >
+              Contact Us
+            </Button>
+          </Link>
         </Stack>
         
         {/* Mobile navigation button */}
@@ -64,11 +80,11 @@ function Navbar() {
           bg={"#1A2A67"}
         >
           <Stack spacing={4} align="center">
-            <Link href="#about"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}}>About Us</Button></Link>
-            <Link href="JicBlogs"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}}>JIC Blogs</Button></Link>
-            <Link href="/Programs"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}}>Our Program</Button></Link>
-            <Link href="#startup"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}}>Startups</Button></Link>
-            <Link href="#team"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}}>Team</Button></Link>
+            <Link to="#about"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}}>About Us</Button></Link>
+            <Link to="JicBlogs"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}}>JIC Blogs</Button></Link>
+            <Link to="/Programs"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}}>Our Program</Button></Link>
+            <Link to="#startup"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}}>Startups</Button></Link>
+            <Link to="#team"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}}>Team</Button></Link>
             <Button
               as={'a'}
               fontSize={'sm'}

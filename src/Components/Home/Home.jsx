@@ -461,8 +461,8 @@ function HomePage() {
                     cursor: "pointer",
                   }}
                 >
-                  <Box textAlign="center" pt="4">
-                    <Text fontSize={["18px", "27px"]} fontWeight="700">
+                  <Box textAlign="center" pt="2">
+                    <Text fontSize={["24px", "27px"]} fontWeight="600">
                       KHOJ: The Startup Conclave
                     </Text>
                   </Box>

@@ -7,12 +7,14 @@ import {
     GridItem,
     Image,
     UnorderedList,
-    ListItem  
+    ListItem,  
+    Link
 } from "@chakra-ui/react";
 import khoj from '../../Assets/khoj.jpg'
 import induction from '../../Assets/induction.jpg'
 import incbationpro from '../../Assets/incubationpro.jpg'
 import accelerator from '../../Assets/accelerator.jpg'
+import LeaderTalk from '../../Assets/parichay.png'
 
 export default function Programs(){
     return(
@@ -45,7 +47,7 @@ export default function Programs(){
                 gap={[4, 6]}
                 justifySelf="center" alignSelf="center"
                 >
-                
+                <Link href="#Khoj">
                 <GridItem
                     w={["100%", "408px"]}
                     h="60px"
@@ -64,7 +66,8 @@ export default function Programs(){
                     </Text>
                     </Box>
                 </GridItem>
-                
+                </Link>
+                <Link href="#Leader">
                 <GridItem
                     w={["100%", "408px"]}
                     h="60px"
@@ -83,8 +86,8 @@ export default function Programs(){
                     </Text>
                     </Box>
                 </GridItem>
-                
-                
+                </Link>
+                <Link href="#Virtual">
                 <GridItem
                     w={["100%", "408px"]}
                     h="60px"
@@ -103,6 +106,8 @@ export default function Programs(){
                     </Text>
                     </Box>
                 </GridItem>
+                </Link>
+                <Link href="#Accelerator">
                 <GridItem
                     w={["100%", "408px"]}
                     h="60px"
@@ -121,6 +126,8 @@ export default function Programs(){
                     </Text>
                     </Box>
                 </GridItem>
+                </Link>
+                <Link href="#Induction">
                 <GridItem
                     w={["100%", "408px"]}
                     h="60px"
@@ -139,6 +146,8 @@ export default function Programs(){
                     </Text>
                     </Box>
                 </GridItem>
+                </Link>
+                <Link href="#Incubator">
                 <GridItem
                     w={["100%", "408px"]}
                     h="60px"
@@ -157,12 +166,13 @@ export default function Programs(){
                     </Text>
                     </Box>
                 </GridItem>
+                </Link>
                 </Grid>
             </Box>
             </Box>
 
             {/* Khoj Section */}
-
+            <section id="Khoj">
             <Box  py={'7%'}>
                 <Box pl={'20%'} pr={'20%'}>
                 <Grid
@@ -195,7 +205,8 @@ export default function Programs(){
                 </Grid>
                 </Box>
             </Box>
-            <section>
+            </section>
+            <section id="Leader">
             <Box bg={'#D9D9D9'} py={'7%'}>
                 <Box px={'20%'}>
                 <Grid
@@ -221,7 +232,7 @@ export default function Programs(){
                     </GridItem>
                     <GridItem>
                     <Image 
-                        src="https://i.pinimg.com/564x/dc/4f/21/dc4f21932a6a6453c91585f514f8d73f.jpg"
+                        src={LeaderTalk}
                         height={'400px'}
                         width={'400px'}
                         borderRadius={"xl"}
@@ -231,6 +242,7 @@ export default function Programs(){
                 </Box>
             </Box>
             </section>
+            <section id="Virtual">
             <Box  py={'7%'}>
                 <Box pl={'20%'} pr={'20%'}>
                 <Grid
@@ -258,7 +270,8 @@ export default function Programs(){
                 </Grid>
                 </Box>
             </Box>
-            <section>
+            </section>
+            <section id="Accelerator">
             <Box bg={'#D9D9D9'} py={'7%'}>
                 <Box px={'20%'}>
                 <Grid
@@ -288,6 +301,7 @@ export default function Programs(){
                 </Box>
             </Box>
             </section>
+            <section id="Induction">
             <Box  py={'7%'}>
                 <Box pl={'20%'} pr={'20%'}>
                 <Grid
@@ -318,6 +332,8 @@ export default function Programs(){
                 </Grid>
                 </Box>
             </Box>
+            </section>
+            <section id="Incubator">
             <Box bg={'#D9D9D9'} py={'7%'}>
                 <Box px={'20%'}>
                 <Grid
@@ -348,6 +364,7 @@ export default function Programs(){
                 </Grid>
                 </Box>
             </Box>
+            </section>
         </>
         )
 }

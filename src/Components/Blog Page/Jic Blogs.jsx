@@ -6,7 +6,8 @@ import {
     Stack,
     Text, 
     Box,
-    Container
+    Container,
+    Spacer
 
   } from '@chakra-ui/react'
   import { Link } from 'react-router-dom';
@@ -67,9 +68,7 @@ export default function JicBlogs() {
                     <Heading size='md'>FROM MUSIC TO BUSINESS: HOW TAYLOR SWIFT IS GOING TO EARN ₹1500 CRORES
                     FROM HER UPCOMING TOUR.</Heading>
             
-                    <Text py='2' color={'gray.600'}>
-                    Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.
-                    </Text>
+                     
                 </CardBody>
                 </Stack>
                 <Image
@@ -79,6 +78,7 @@ export default function JicBlogs() {
                 src="https://www.hindustantimes.com/ht-img/img/2023/08/04/550x309/California-Hotel-Strike-Taylor-Swift-0_1691137412346_1691137445960.jpg"
                 alt='Caffe Latte'
                 />
+                <Box pr={'10'}></Box>
             </Card>
             </Link>
             <Link to='/Blog2'>
@@ -102,9 +102,7 @@ export default function JicBlogs() {
                     <Text py='2' color={'gray.500'} fontSize={'11'}>AUGUST 13, 2021 </Text>
                     <Heading size='md'>JOURNEY OF REDBULL AND MARKETING STRATEGY</Heading>
             
-                    <Text py='2' color={'gray.600'}>
-                    Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.
-                    </Text>
+                     
                 </CardBody>
                 </Stack>
                 <Image
@@ -114,6 +112,7 @@ export default function JicBlogs() {
                 src="https://media.npr.org/assets/img/2022/10/23/ap22295802404552_custom-fe1a268512e52fb2b20472bbf854be21ff77edc3-s900-c85.webp"
                 alt='Caffe Latte'
                 />
+                
             </Card>
             </Link>
             <Link to='/Blog3'>
@@ -137,18 +136,19 @@ export default function JicBlogs() {
                     <Text py='2' color={'gray.500'} fontSize={'11'}>AUGUST 13, 2021 </Text>
                     <Heading size='md'>Journey and obstacles : Tata grp</Heading>
             
-                    <Text py='2' color={'gray.600'}>
-                    Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.
-                    </Text>
+                     
                 </CardBody>
                 </Stack>
-                <Image
+                <Spacer/>
+                <Image 
                 borderRadius={'lg'}
+                
                 objectFit='cover'
                 maxW={{ base: '100%', sm: '300px' }}
                 src={tata}
                 alt='Caffe Latte'
                 />
+                <Box pr={'10'}></Box>
             </Card>
             </Link>
             
