@@ -78,10 +78,10 @@ export default function Footer() {
           <Stack align={'flex-start'}>
             <ListHeader>Social</ListHeader>
             <Stack direction={['column', 'row']}>
-              <SocialButton label={'Linkedin'} href={'#'}>
+              <SocialButton label={'Linkedin'} href={'https://www.linkedin.com/company/jecrc-incubation-centre/'}>
                 <FaLinkedin />
               </SocialButton>
-              <SocialButton label={'Instagram'} href={'#'}>
+              <SocialButton label={'Instagram'} href={'https://instagram.com/jic_foundation?igshid=MzRlODBiNWFlZA=='}>
                 <FaInstagram />
               </SocialButton>
             </Stack>

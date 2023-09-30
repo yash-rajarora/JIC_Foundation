@@ -6,10 +6,10 @@ import {
     Stack,
     Text, 
     Box,
-    Container,
-    Link,
+    Container
 
   } from '@chakra-ui/react'
+  import { Link } from 'react-router-dom';
 import '../Home/css/home.css'
 import { motion } from 'framer-motion';
 import tata from '../../Assets/06302022-image1-equitymaster.jpg'
@@ -44,7 +44,7 @@ export default function JicBlogs() {
 
         </Box>
         <Box py={'14'} px={['5','20%']} bg={'gray.100'}>
-            <Link href='/Blog1'>
+            <Link to='/Blog1'>
             <Card
                 direction={{ base: 'column', sm: 'row' }}
                 overflow='hidden'
@@ -81,7 +81,7 @@ export default function JicBlogs() {
                 />
             </Card>
             </Link>
-            <Link href='/Blog2'>
+            <Link to='/Blog2'>
             <Card
                 direction={{ base: 'column', sm: 'row' }}
                 overflow='hidden'
@@ -116,7 +116,7 @@ export default function JicBlogs() {
                 />
             </Card>
             </Link>
-            <Link href='/Blog3'>
+            <Link to='/Blog3'>
             <Card
                 direction={{ base: 'column', sm: 'row' }}
                 overflow='hidden'

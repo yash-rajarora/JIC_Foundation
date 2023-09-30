@@ -1,5 +1,5 @@
 // src/HomePage.js
-import React, { useState, useEffect  } from "react";
+import React, { useState, useEffect } from "react";
 import "./css/home.css";
 import {
   Box,
@@ -16,22 +16,22 @@ import {
   Card,
   CardBody,
   Divider,
-  Button
+  Button,
 } from "@chakra-ui/react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Link } from "react-router-dom";
-import tata from '../../Assets/06302022-image1-equitymaster.jpg'
+import tata from "../../Assets/06302022-image1-equitymaster.jpg";
 
-import team1 from '../../Assets/P1.png'
-import team2 from '../../Assets/P2.png'
-import team3 from '../../Assets/P3.png'
-import team4 from '../../Assets/P4.png'
-import team5 from '../../Assets/P5.png'
+import team1 from "../../Assets/P1.png";
+import team2 from "../../Assets/P2.png";
+import team3 from "../../Assets/P3.png";
+import team4 from "../../Assets/P4.png";
+import team5 from "../../Assets/P5.png";
 
 import back from "../../Assets/bg.png";
-import backm from "../../Assets/bgmobile.jpg"
+import backm from "../../Assets/bgmobile.jpg";
 import back2 from "../../Assets/bg121.png";
-import back2m from "../../Assets/bg121mobile.png"
+import back2m from "../../Assets/bg121mobile.png";
 
 import startup1 from "../../Assets/startups/1.png";
 import startup2 from "../../Assets/startups/2.png";
@@ -49,71 +49,70 @@ import startup13 from "../../Assets/startups/13.png";
 import startup14 from "../../Assets/startups/14.png";
 
 function HomePage() {
-  const INTERVAL = 1400; 
-const MAX_VISIBILITY = 3;
+  const INTERVAL = 1400;
+  const MAX_VISIBILITY = 3;
 
-const Card1 = ({ imageSrc }) => (
-  <Box className='card1' >
-    <img src={imageSrc}alt="team" borderRadius={'xl'} />
-  </Box>
-);
-const carouselData = [
-  {
-    imageSrc: team1,
-  },
-  {
-    imageSrc: team2,
-  },
-  {
-    imageSrc: team3,
-  },
-  {
-    imageSrc: team4,
-  },
-  {
-    imageSrc: team5,
-  },  
-  // Add more objects for each card...
-];
-const Carousel = ({ children }) => {
-  const [active, setActive] = useState(2);
-  useEffect(() => {
-    const timer = setInterval(() => {
-      // Calculate the next active index
-      const nextIndex = (active + 1) % carouselData.length;
-      setActive(nextIndex);
-    }, INTERVAL);
-
-    return () => {
-      clearInterval(timer);
-    };
-  }, [active, carouselData.length]);
-
-
-  return (
-    <Flex className='carousel' >
-      {carouselData.map((data, i) => (
-        <Flex
-          width={'80%'}
-          className='card-container'
-          flexDirection='column'
-          alignItems='center'
-          style={{
-            '--active': i === active ? 1 : 0,
-            '--offset': (active - i) / 3,
-            '--direction': Math.sign(active - i),
-            '--abs-offset': Math.abs(active - i) / 3,
-            pointerEvents: active === i ? 'auto' : 'none',
-            opacity: Math.abs(active - i) >= MAX_VISIBILITY ? 0 : 1,
-            display: Math.abs(active - i) > MAX_VISIBILITY ? 'none' : 'block',
-          }}
-        >
-          <Card1 {...data} key={i} />
-        </Flex>
-      ))}
-    </Flex>
+  const Card1 = ({ imageSrc }) => (
+    <Box className="card1">
+      <img src={imageSrc} alt="team" borderRadius={"xl"} />
+    </Box>
   );
-};
+  const carouselData = [
+    {
+      imageSrc: team1,
+    },
+    {
+      imageSrc: team2,
+    },
+    {
+      imageSrc: team3,
+    },
+    {
+      imageSrc: team4,
+    },
+    {
+      imageSrc: team5,
+    },
+    // Add more objects for each card...
+  ];
+  const Carousel = ({ children }) => {
+    const [active, setActive] = useState(2);
+    useEffect(() => {
+      const timer = setInterval(() => {
+        // Calculate the next active index
+        const nextIndex = (active + 1) % carouselData.length;
+        setActive(nextIndex);
+      }, INTERVAL);
+
+      return () => {
+        clearInterval(timer);
+      };
+    }, [active, carouselData.length]);
+
+    return (
+      <Flex className="carousel">
+        {carouselData.map((data, i) => (
+          <Flex
+            width={"80%"}
+            className="card-container"
+            flexDirection="column"
+            alignItems="center"
+            style={{
+              "--active": i === active ? 1 : 0,
+              "--offset": (active - i) / 3,
+              "--direction": Math.sign(active - i),
+              "--abs-offset": Math.abs(active - i) / 3,
+              pointerEvents: active === i ? "auto" : "none",
+              opacity: Math.abs(active - i) >= MAX_VISIBILITY ? 0 : 1,
+              display: Math.abs(active - i) > MAX_VISIBILITY ? "none" : "block",
+            }}
+          >
+            <Card1 {...data} key={i} />
+          </Flex>
+        ))}
+      </Flex>
+    );
+  };
   return (
     <Box>
       {/* Hero Section */}
@@ -122,14 +121,14 @@ const Carousel = ({ children }) => {
         h={"100vh"}
         pb={10}
         backgroundImage={[`url(${backm})`, `url(${back})`]}
-        backgroundSize={["contain","fit"]}
+        backgroundSize={["contain", "fit"]}
         backgroundPosition={" "}
       >
         <VStack
           w={"full"}
           justify={"center"}
           mr="20%"
-          mb={["50%","20%"]}
+          mb={["50%", "20%"]}
           px={useBreakpointValue({ base: 4, md: 8 })}
         >
           <Stack maxW={"2xl"} align={"flex-start"} spacing={6}>
@@ -160,7 +159,7 @@ const Carousel = ({ children }) => {
       <Box
         pt={["10", "35px"]}
         pb={["10", "35px"]}
-        pl={["5","0"]}
+        pl={["5", "0"]}
         display="flex"
         alignItems="center"
         justifyContent="center"
@@ -173,7 +172,7 @@ const Carousel = ({ children }) => {
         >
           <GridItem
             w={["90%", "180px"]}
-            h={["100%","180px"]}
+            h={["100%", "180px"]}
             bgGradient="linear(to-b,  #0491F6 0%, #1F347A 68.02%, #1A2A67 100%)"
             color="white"
             rounded="lg"
@@ -185,7 +184,7 @@ const Carousel = ({ children }) => {
             }}
           >
             <Box textAlign="center" pt="5">
-              <Text fontSize={["40","48"]} fontWeight="600">
+              <Text fontSize={["40", "48"]} fontWeight="600">
                 50+
               </Text>
               <Text fontSize="20" fontFamily="500">
@@ -194,7 +193,7 @@ const Carousel = ({ children }) => {
             </Box>
           </GridItem>
           <GridItem
-             w={["90%", "180px"]}
+            w={["90%", "180px"]}
             h="180px"
             bgGradient="linear(to-b,  #0491F6 0%, #1F347A 68.02%, #1A2A67 100%)"
             color="white"
@@ -207,17 +206,16 @@ const Carousel = ({ children }) => {
             }}
           >
             <Box textAlign="center" pt="5">
-              <Text fontSize={['40',"48"]} fontWeight="600">
+              <Text fontSize={["40", "48"]} fontWeight="600">
                 60 Lac
               </Text>
               <Text fontSize="22" fontFamily="500">
-                Internal
-                 Seed Funds
+                Internal Seed Funds
               </Text>
             </Box>
           </GridItem>
           <GridItem
-             w={["90%", "180px"]}
+            w={["90%", "180px"]}
             h="180px"
             bgGradient="linear(to-b,  #0491F6 0%, #1F347A 68.02%, #1A2A67 100%)"
             color="white"
@@ -230,7 +228,7 @@ const Carousel = ({ children }) => {
             }}
           >
             <Box textAlign="center" pt="5">
-              <Text fontSize={["40","48"]} fontWeight="600">
+              <Text fontSize={["40", "48"]} fontWeight="600">
                 1000+
               </Text>
               <Text fontSize="20" fontFamily="500">
@@ -239,7 +237,7 @@ const Carousel = ({ children }) => {
             </Box>
           </GridItem>
           <GridItem
-             w={["90%", "180px"]}
+            w={["90%", "180px"]}
             h="180px"
             bgGradient="linear(to-b,  #0491F6 0%, #1F347A 68.02%, #1A2A67 100%)"
             color="white"
@@ -252,7 +250,7 @@ const Carousel = ({ children }) => {
             }}
           >
             <Box textAlign="center" pt="5">
-              <Text fontSize={["40","48"]} fontWeight="600">
+              <Text fontSize={["40", "48"]} fontWeight="600">
                 20+
               </Text>
               <Text fontSize="20" fontFamily="500">
@@ -270,12 +268,17 @@ const Carousel = ({ children }) => {
           w={["full"]}
           h={["100vh", "56.25vw"]}
           backgroundImage={[`url(${back2m})`, `url(${back2})`]}
-          backgroundSize={["contain","cover"]}
+          backgroundSize={["contain", "cover"]}
           display="flex"
           justifyContent={["center", "flex-end"]}
           flexDirection={["column", "row"]}
         >
-          <Box pt={["0", "10%"]} pr={["5%", "20%"]} pl={["5%", ""]} overflowX="hidden"> 
+          <Box
+            pt={["0", "10%"]}
+            pr={["5%", "20%"]}
+            pl={["5%", ""]}
+            overflowX="hidden"
+          >
             <Box maxW={["100%", "400px"]}>
               <Text
                 className="gradient-text"
@@ -284,7 +287,7 @@ const Carousel = ({ children }) => {
               >
                 About JIC
               </Text>
-              <Text fontSize={['12',"18"]}>
+              <Text fontSize={["12", "18"]}>
                 Academic excellence and vast experience in the field of research
                 and innovation at JECRC Foundation led to the inception of JECRC
                 Incubation Centre in 2021 with a vision to handhold the campus
@@ -304,131 +307,127 @@ const Carousel = ({ children }) => {
 
       {/* JIC Blogs Section */}
       <section id="JicBlogs">
-      <Box bg="#F2F4F7">
-        <Box py={[10,14]}>
-          <Container>
-            <Heading as="h1" size="4xl" mb={[0,8]} textAlign="center">
-              <Text
-                fontWeight="900"
-                className="gradient-text1"
-                fontFamily={"sans-serif"}
+        <Box bg="#F2F4F7">
+          <Box py={[10, 14]}>
+            <Container>
+              <Heading as="h1" size="4xl" mb={[0, 8]} textAlign="center">
+                <Text
+                  fontWeight="900"
+                  className="gradient-text1"
+                  fontFamily={"sans-serif"}
+                >
+                  JIC BLOGS
+                </Text>
+              </Heading>
+            </Container>
+          </Box>
+          <Box textAlign={["center", "right"]} pr={[0, "11%"]} pb={10}>
+            <Link to="/JicBlogs">
+              <Button
+                bg={"white"}
+                _hover={{
+                  bg: "#1D2939",
+                  color: "white",
+                }}
               >
-                JIC BLOGS
-              </Text>
-            </Heading>
-          </Container>
+                View more
+              </Button>
+            </Link>
+          </Box>
+          <Box pb={20} pr={[5, 40]} pl={[5, 40]}>
+            <Grid templateColumns={["1fr", "repeat(3, 1fr)"]} gap={6}>
+              <GridItem>
+                <Link to="/Blog1">
+                  <Card w="full">
+                    <CardBody
+                      transition="background-color 0.3s ease-in-out"
+                      _hover={{
+                        bg: "#1D2939",
+                        color: "white",
+                        cursor: "pointer",
+                      }}
+                    >
+                      <Stack mt="6" spacing="3">
+                        <Text fontSize="8px">AUGUST 13, 2021</Text>
+                        <Heading size="md">
+                          FROM MUSIC TO BUSINESS: HOW TAYLOR SWIFT IS GOING TO
+                          EARN ₹1500 CRORES FROM HER UPCOMING TOUR.
+                        </Heading>
+                        <Image
+                          src="https://www.hindustantimes.com/ht-img/img/2023/08/04/550x309/California-Hotel-Strike-Taylor-Swift-0_1691137412346_1691137445960.jpg"
+                          alt="Green double couch with wooden legs"
+                          borderRadius="lg"
+                        />
+                      </Stack>
+                    </CardBody>
+                  </Card>
+                </Link>
+              </GridItem>
+              <GridItem>
+                <Link to="/Blog2">
+                  <Card w="full">
+                    <CardBody
+                      transition="background-color 0.3s ease-in-out"
+                      _hover={{
+                        bg: "#1D2939",
+                        color: "white",
+                        cursor: "pointer",
+                      }}
+                    >
+                      <Stack mt="6" spacing="3">
+                        <Text fontSize="8px">AUGUST 13, 2021</Text>
+                        <Heading size="md" pb={"3"}>
+                          JOURNEY OF REDBULL AND MARKETING STRATEGY
+                        </Heading>
+                        <Image
+                          src="https://media.npr.org/assets/img/2022/10/23/ap22295802404552_custom-fe1a268512e52fb2b20472bbf854be21ff77edc3-s900-c85.webp"
+                          alt="Green double couch with wooden legs"
+                          borderRadius="lg"
+                        />
+                      </Stack>
+                    </CardBody>
+                  </Card>
+                </Link>
+              </GridItem>
+              <GridItem>
+                <Link to="/Blog3">
+                  <Card w="full">
+                    <CardBody
+                      transition="background-color 0.3s ease-in-out"
+                      _hover={{
+                        bg: "#1D2939",
+                        color: "white",
+                        cursor: "pointer",
+                      }}
+                    >
+                      <Stack mt="6" spacing="3">
+                        <Text fontSize="8px">AUGUST 13, 2021</Text>
+                        <Heading size="md" pb={"9"}>
+                          Journey and obstacles : Tata grp
+                        </Heading>
+                        <Image
+                          src={tata}
+                          alt="Green double couch with wooden legs"
+                          borderRadius="lg"
+                        />
+                      </Stack>
+                    </CardBody>
+                  </Card>
+                </Link>
+              </GridItem>
+            </Grid>
+          </Box>
         </Box>
-        <Box textAlign={["center", "right"]} pr={[0, "11%"]} pb={10}>
-          <Link to="/JicBlogs">
-            <Button
-              bg={"white"}
-              _hover={{
-                bg: "#1D2939",
-                color: "white",
-              }}
-            >
-              View more
-            </Button>
-          </Link>
-        </Box>
-        <Box pb={20} pr={[5, 40]} pl={[5, 40]}>
-          <Grid templateColumns={["1fr", "repeat(3, 1fr)"]} gap={6}>
-            <GridItem>
-            <Link to="/Blog1">
-              <Card w="full">
-                <CardBody
-                  transition="background-color 0.3s ease-in-out"
-                  _hover={{
-                    bg: "#1D2939",
-                    color: "white",
-                    cursor: "pointer"
-                  }}
-                >
-                  <Stack mt="6" spacing="3">
-                    <Text fontSize="8px">AUGUST 13, 2021</Text>
-                    <Heading size="md">
-                    FROM MUSIC TO BUSINESS: HOW TAYLOR SWIFT IS GOING TO EARN ₹1500 CRORES
-                    FROM HER UPCOMING TOUR.
-
-                    </Heading>
-                    <Image
-                      src="https://www.hindustantimes.com/ht-img/img/2023/08/04/550x309/California-Hotel-Strike-Taylor-Swift-0_1691137412346_1691137445960.jpg"
-                      alt="Green double couch with wooden legs"
-                      borderRadius="lg"
-                    />
-                  </Stack>
-                </CardBody>
-                
-              </Card>
-              </Link>
-            </GridItem>
-            <GridItem>
-            <Link to='/Blog2'>
-              <Card w="full">
-                <CardBody
-                  transition="background-color 0.3s ease-in-out"
-                  _hover={{
-                    bg: "#1D2939",
-                    color: "white",
-                    cursor: "pointer"
-                  }}
-                >
-                  <Stack mt="6" spacing="3">
-                    <Text fontSize="8px">AUGUST 13, 2021</Text>
-                    <Heading size="md" pb={'3'}>
-                      JOURNEY OF REDBULL AND MARKETING STRATEGY
-                    </Heading>
-                    <Image
-                      src="https://media.npr.org/assets/img/2022/10/23/ap22295802404552_custom-fe1a268512e52fb2b20472bbf854be21ff77edc3-s900-c85.webp"
-                      alt="Green double couch with wooden legs"
-                      borderRadius="lg"
-                    />
-                  </Stack>
-                </CardBody>
-                
-              </Card>
-              </Link>
-            </GridItem>
-            <GridItem>
-            <Link to='/Blog3'>
-              <Card w="full">
-                <CardBody
-                  transition="background-color 0.3s ease-in-out"
-                  _hover={{
-                    bg: "#1D2939",
-                    color: "white",
-                    cursor: "pointer"
-                  }}
-                >
-                  <Stack mt="6" spacing="3">
-                    <Text fontSize="8px">AUGUST 13, 2021</Text>
-                    <Heading size="md" pb={'9'}>
-                    Journey and obstacles : Tata grp
-                    </Heading>
-                    <Image
-                      src={tata}
-                      alt="Green double couch with wooden legs"
-                      borderRadius="lg"
-                    />
-                  </Stack>
-                </CardBody>
-                
-              </Card>
-              </Link>
-            </GridItem>
-          </Grid>
-        </Box>
-      </Box>
       </section>
 
       {/* Our Program Section */}
 
       <section id="OurProgram">
         <Box bgGradient="linear(to-b,  #0491F6 0%, #1F347A 68.02%, #1A2A67 100%)">
-          <Box pt={14}pb={[0,14]}>
+          <Box pt={14} pb={[0, 14]}>
             <Container>
               <Heading as="h1" size="3xl" mb={8} textAlign="center">
-                <Text fontWeight="700" color={"white"} fontSize={['35','65']}>
+                <Text fontWeight="700" color={"white"} fontSize={["35", "65"]}>
                   OUR PROGRAMS
                 </Text>
               </Heading>
@@ -450,115 +449,125 @@ const Carousel = ({ children }) => {
               gap={[4, 6]}
             >
               <Link to="/Programs">
-              <GridItem
-                w={["100%", "408px"]}
-                h="60px"
-                bg={"white"}
-                color={"black"}
-                rounded="lg"
-                _hover={{
-                  bg: "#1D2939",
-                  color: "white",
-                  cursor:'pointer'
-                }}
-              >
-                <Box textAlign="center" pt="4">
-                  <Text fontSize={["18px", "27px"]} fontWeight="700">
-                    KHOJ: The Startup Conclave
-                  </Text>
-                </Box>
-              </GridItem>
+                <GridItem
+                  w={["100%", "408px"]}
+                  h="60px"
+                  bg={"white"}
+                  color={"black"}
+                  rounded="lg"
+                  _hover={{
+                    bg: "#1D2939",
+                    color: "white",
+                    cursor: "pointer",
+                  }}
+                >
+                  <Box textAlign="center" pt="4">
+                    <Text fontSize={["18px", "27px"]} fontWeight="700">
+                      KHOJ: The Startup Conclave
+                    </Text>
+                  </Box>
+                </GridItem>
               </Link>
-              <GridItem
-                w={["100%", "408px"]}
-                h="60px"
-                bg={"white"}
-                color={"black"}
-                rounded="lg"
-                _hover={{
-                  bg: "#1D2939",
-                  color: "white",
-                  cursor:'pointer'
-                }}
-              >
-                <Box textAlign="center" pt="2">
-                  <Text fontSize={["24px", "27px"]} fontWeight="600">
-                    Leader's Talk
-                  </Text>
-                </Box>
-              </GridItem>
-              <GridItem
-                w={["100%", "408px"]}
-                h="60px"
-                bg={"white"}
-                color={"black"}
-                rounded="lg"
-                _hover={{
-                  bg: "#1D2939",
-                  color: "white",
-                  cursor:'pointer'
-                }}
-              >
-                <Box textAlign="center" pt="2">
-                  <Text fontSize={["24px", "27px"]} fontWeight="600">
-                    Incubation Program
-                  </Text>
-                </Box>
-              </GridItem>
-              <GridItem
-                w={["100%", "408px"]}
-                h="60px"
-                bg={"white"}
-                color={"black"}
-                rounded="lg"
-                _hover={{
-                  bg: "#1D2939",
-                  color: "white",
-                  cursor:'pointer'
-                }}
-              >
-                <Box textAlign="center" pt="2">
-                  <Text fontSize={["24px", "27px"]} fontWeight="600">
-                    Induction Program
-                  </Text>
-                </Box>
-              </GridItem>
-              <GridItem
-                w={["100%", "408px"]}
-                h="60px"
-                bg={"white"}
-                color={"black"}
-                rounded="lg"
-                _hover={{
-                  bg: "#1D2939",
-                  color: "white",
-                  cursor:'pointer'
-                }}
-              >
-                <Box textAlign="center" pt="2">
-                  <Text fontSize={["24px", "27px"]} fontWeight="600">
-                    Virtual Accelerator
-                  </Text>
-                </Box>
-              </GridItem>
-              <GridItem
-                w={["100%", "408px"]}
-                h="60px"
-                bg={"white"}
-                color={"black"}
-                rounded="lg"
-                _hover={{
-                  bg: "#1D2939",
-                  color: "white",
-                  cursor:'pointer'
-                }}
-              >
-                <Box textAlign="center" pt="2">
-                  <Text fontSize={["24px", "27px"]} fontWeight="600">
-                    Accelerator Program
-                  </Text>
-                </Box>
-              </GridItem>
+              <Link to="/Programs">
+                <GridItem
+                  w={["100%", "408px"]}
+                  h="60px"
+                  bg={"white"}
+                  color={"black"}
+                  rounded="lg"
+                  _hover={{
+                    bg: "#1D2939",
+                    color: "white",
+                    cursor: "pointer",
+                  }}
+                >
+                  <Box textAlign="center" pt="2">
+                    <Text fontSize={["24px", "27px"]} fontWeight="600">
+                      Leader's Talk
+                    </Text>
+                  </Box>
+                </GridItem>
+              </Link>
+              <Link to="/Programs">
+                <GridItem
+                  w={["100%", "408px"]}
+                  h="60px"
+                  bg={"white"}
+                  color={"black"}
+                  rounded="lg"
+                  _hover={{
+                    bg: "#1D2939",
+                    color: "white",
+                    cursor: "pointer",
+                  }}
+                >
+                  <Box textAlign="center" pt="2">
+                    <Text fontSize={["24px", "27px"]} fontWeight="600">
+                      Incubation Program
+                    </Text>
+                  </Box>
+                </GridItem>
+              </Link>
+              <Link to="/Programs">
+                <GridItem
+                  w={["100%", "408px"]}
+                  h="60px"
+                  bg={"white"}
+                  color={"black"}
+                  rounded="lg"
+                  _hover={{
+                    bg: "#1D2939",
+                    color: "white",
+                    cursor: "pointer",
+                  }}
+                >
+                  <Box textAlign="center" pt="2">
+                    <Text fontSize={["24px", "27px"]} fontWeight="600">
+                      Induction Program
+                    </Text>
+                  </Box>
+                </GridItem>
+              </Link>
+              <Link to="/Programs">
+                <GridItem
+                  w={["100%", "408px"]}
+                  h="60px"
+                  bg={"white"}
+                  color={"black"}
+                  rounded="lg"
+                  _hover={{
+                    bg: "#1D2939",
+                    color: "white",
+                    cursor: "pointer",
+                  }}
+                >
+                  <Box textAlign="center" pt="2">
+                    <Text fontSize={["24px", "27px"]} fontWeight="600">
+                      Virtual Accelerator
+                    </Text>
+                  </Box>
+                </GridItem>
+              </Link>
+              <Link to="/Programs">
+                <GridItem
+                  w={["100%", "408px"]}
+                  h="60px"
+                  bg={"white"}
+                  color={"black"}
+                  rounded="lg"
+                  _hover={{
+                    bg: "#1D2939",
+                    color: "white",
+                    cursor: "pointer",
+                  }}
+                >
+                  <Box textAlign="center" pt="2">
+                    <Text fontSize={["24px", "27px"]} fontWeight="600">
+                      Accelerator Program
+                    </Text>
+                  </Box>
+                </GridItem>
+              </Link>
             </Grid>
           </Box>
         </Box>
@@ -568,13 +577,17 @@ const Carousel = ({ children }) => {
 
       <section id="startup">
         <Box bg="#F2F4F7">
-          <Box pt={14} pb={[0,14]} textAlign="center">
-            <Text fontSize={["40","65"]} fontWeight="700" className="gradient-text1">
+          <Box pt={14} pb={[0, 14]} textAlign="center">
+            <Text
+              fontSize={["40", "65"]}
+              fontWeight="700"
+              className="gradient-text1"
+            >
               INCUBATED STARTUPS
             </Text>
           </Box>
           <Box py={14} px={"17%"} textAlign="center">
-            <Grid templateColumns={["repeat(3,1fr)","repeat(7, 1fr)"]}>
+            <Grid templateColumns={["repeat(3,1fr)", "repeat(7, 1fr)"]}>
               <GridItem>
                 <Box
                   as="div"
@@ -723,23 +736,23 @@ const Carousel = ({ children }) => {
       {/* TEAM Section */}
 
       <section id="team">
-  <Box overflow="hidden">
-    <Box height={["60vh", '80vh']}>
-      <Box py={[6, 14]} textAlign="center">
-        <Text fontSize={["30px", "40px", "65px"]} fontWeight="700" className="gradient-text1">
-          TEAM
-        </Text>
-      </Box>
-      <Box w={["100%", '80%']} px={[3, '30%']}>
-
-        <Carousel />
-
-      </Box>
-    </Box>
-  </Box>
-</section>
-
-
+        <Box overflow="hidden">
+          <Box height={["60vh", "80vh"]}>
+            <Box py={[6, 14]} textAlign="center">
+              <Text
+                fontSize={["30px", "40px", "65px"]}
+                fontWeight="700"
+                className="gradient-text1"
+              >
+                TEAM
+              </Text>
+            </Box>
+            <Box w={["100%", "100%"]} px={[3, "30%"]}>
+              <Carousel />
+            </Box>
+          </Box>
+        </Box>
+      </section>
     </Box>
   );
 }
