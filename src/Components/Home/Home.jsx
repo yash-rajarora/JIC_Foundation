@@ -461,8 +461,8 @@ function HomePage() {
                     cursor: "pointer",
                   }}
                 >
-                  <Box textAlign="center" pt="2">
-                    <Text fontSize={["24px", "27px"]} fontWeight="600">
+                  <Box textAlign="center" pt={['4',"2"]}>
+                    <Text fontSize={["18px", "27px"]} fontWeight="600">
                       KHOJ: The Startup Conclave
                     </Text>
                   </Box>
@@ -481,8 +481,8 @@ function HomePage() {
                     cursor: "pointer",
                   }}
                 >
-                  <Box textAlign="center" pt="2">
-                    <Text fontSize={["24px", "27px"]} fontWeight="600">
+                  <Box textAlign="center" pt={['4',"2"]}>
+                    <Text fontSize={["18px", "27px"]} fontWeight="600">
                       Leader's Talk
                     </Text>
                   </Box>
@@ -501,8 +501,8 @@ function HomePage() {
                     cursor: "pointer",
                   }}
                 >
-                  <Box textAlign="center" pt="2">
-                    <Text fontSize={["24px", "27px"]} fontWeight="600">
+                  <Box textAlign="center" pt={['4',"2"]}>
+                    <Text fontSize={["18px", "27px"]} fontWeight="600">
                       Incubation Program
                     </Text>
                   </Box>
@@ -521,8 +521,8 @@ function HomePage() {
                     cursor: "pointer",
                   }}
                 >
-                  <Box textAlign="center" pt="2">
-                    <Text fontSize={["24px", "27px"]} fontWeight="600">
+                  <Box textAlign="center" pt={['4',"2"]}>
+                    <Text fontSize={["18px", "27px"]} fontWeight="600">
                       Induction Program
                     </Text>
                   </Box>
@@ -541,8 +541,8 @@ function HomePage() {
                     cursor: "pointer",
                   }}
                 >
-                  <Box textAlign="center" pt="2">
-                    <Text fontSize={["24px", "27px"]} fontWeight="600">
+                  <Box textAlign="center" pt={['4',"2"]}>
+                    <Text fontSize={["18px", "27px"]} fontWeight="600">
                       Virtual Accelerator
                     </Text>
                   </Box>
@@ -561,8 +561,8 @@ function HomePage() {
                     cursor: "pointer",
                   }}
                 >
-                  <Box textAlign="center" pt="2">
-                    <Text fontSize={["24px", "27px"]} fontWeight="600">
+                  <Box textAlign="center" pt={['4',"2"]}>
+                    <Text fontSize={["18px", "27px"]} fontWeight="600">
                       Accelerator Program
                     </Text>
                   </Box>
@@ -737,7 +737,7 @@ function HomePage() {
 
       <section id="team">
         <Box overflow="hidden">
-          <Box height={["60vh", "80vh"]}>
+          <Box height={["35vh", "80vh"]}>
             <Box py={[6, 14]} textAlign="center">
               <Text
                 fontSize={["30px", "40px", "65px"]}
@@ -747,9 +747,11 @@ function HomePage() {
                 TEAM
               </Text>
             </Box>
-            <Box w={["100%", "100%"]} px={[3, "30%"]}>
+            
+            <Box w={["100%", "100%"]} px={[10, "30%"]} >
               <Carousel />
             </Box>
+          
           </Box>
         </Box>
       </section>

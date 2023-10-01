@@ -15,6 +15,7 @@ import induction from '../../Assets/induction.jpg'
 import incbationpro from '../../Assets/incubationpro.jpg'
 import accelerator from '../../Assets/accelerator.jpg'
 import LeaderTalk from '../../Assets/parichay.png'
+import virtual from '../../Assets/virtual.jpg'
 
 export default function Programs(){
     return(
@@ -60,8 +61,8 @@ export default function Programs(){
                     cursor:'pointer'
                     }}
                 >
-                    <Box textAlign="center" pt="2">
-                    <Text fontSize={["24px", "27px"]} fontWeight="600">
+                    <Box textAlign="center" pt={['4',"2"]}>
+                    <Text fontSize={["18px", "27px"]} fontWeight="600">
                         KHOJ: The Startup Conclave
                     </Text>
                     </Box>
@@ -80,8 +81,8 @@ export default function Programs(){
                     cursor:'pointer'
                     }}
                 >
-                    <Box textAlign="center" pt="2">
-                    <Text fontSize={["24px", "27px"]} fontWeight="600">
+                    <Box textAlign="center" pt={['4',"2"]}>
+                    <Text fontSize={["18px", "27px"]} fontWeight="600">
                         Leader's Talk
                     </Text>
                     </Box>
@@ -100,8 +101,8 @@ export default function Programs(){
                     cursor:'pointer'
                     }}
                 >
-                    <Box textAlign="center" pt="2">
-                    <Text fontSize={["24px", "27px"]} fontWeight="600">
+                    <Box textAlign="center" pt={['4',"2"]}>
+                    <Text fontSize={["18px", "27px"]} fontWeight="600">
                         Virtual Accelerator
                     </Text>
                     </Box>
@@ -120,8 +121,8 @@ export default function Programs(){
                     cursor:'pointer'
                     }}
                 >
-                    <Box textAlign="center" pt="2">
-                    <Text fontSize={["24px", "27px"]} fontWeight="600">
+                    <Box textAlign="center" pt={['4',"2"]}>
+                    <Text fontSize={["18px", "27px"]} fontWeight="600">
                         Accelerator Program
                     </Text>
                     </Box>
@@ -140,8 +141,8 @@ export default function Programs(){
                     cursor:'pointer'
                     }}
                 >
-                    <Box textAlign="center" pt="2">
-                    <Text fontSize={["24px", "27px"]} fontWeight="600">
+                    <Box textAlign="center" pt={['4',"2"]}>
+                    <Text fontSize={["18px", "27px"]} fontWeight="600">
                         Induction Program
                     </Text>
                     </Box>
@@ -160,8 +161,8 @@ export default function Programs(){
                     cursor:'pointer'
                     }}
                 >
-                    <Box textAlign="center" pt="2">
-                    <Text fontSize={["24px", "27px"]} fontWeight="600">
+                    <Box textAlign="center" pt={['4',"2"]}>
+                    <Text fontSize={["18px", "27px"]} fontWeight="600">
                         Incubation Program
                     </Text>
                     </Box>
@@ -174,7 +175,7 @@ export default function Programs(){
             {/* Khoj Section */}
             <section id="Khoj">
             <Box  py={'7%'}>
-                <Box pl={'20%'} pr={'20%'}>
+                <Box pl={['10%','20%']} pr={['10%','20%']}>
                 <Grid
                 templateColumns={["repeat(1, 1fr)", "repeat(2, 1fr)"]}
                 
@@ -208,7 +209,7 @@ export default function Programs(){
             </section>
             <section id="Leader">
             <Box bg={'#D9D9D9'} py={'7%'}>
-                <Box px={'20%'}>
+                <Box px={['10%','20%']}>
                 <Grid
                 templateColumns={["repeat(1, 1fr)", "repeat(2, 1fr)"]}
                 gap={'10'}
@@ -244,14 +245,14 @@ export default function Programs(){
             </section>
             <section id="Virtual">
             <Box  py={'7%'}>
-                <Box pl={'20%'} pr={'20%'}>
+                <Box pl={['10%','20%']} pr={['10%','20%']}>
                 <Grid
                 templateColumns={["repeat(1, 1fr)", "repeat(2, 1fr)"]}
                 
                 >
                     <GridItem>
                         <Image 
-                        src="https://i.pinimg.com/564x/dc/4f/21/dc4f21932a6a6453c91585f514f8d73f.jpg"
+                        src={virtual}
                         height={'400px'}
                         width={'400px'}
                         borderRadius={"xl"}
@@ -273,7 +274,7 @@ export default function Programs(){
             </section>
             <section id="Accelerator">
             <Box bg={'#D9D9D9'} py={'7%'}>
-                <Box px={'20%'}>
+                <Box px={['10%','20%']}>
                 <Grid
                 templateColumns={["repeat(1, 1fr)", "repeat(2, 1fr)"]}
                 gap={'10'}
@@ -303,7 +304,7 @@ export default function Programs(){
             </section>
             <section id="Induction">
             <Box  py={'7%'}>
-                <Box pl={'20%'} pr={'20%'}>
+                <Box pl={['10%','20%']} pr={['10%','20%']}>
                 <Grid
                 templateColumns={["repeat(1, 1fr)", "repeat(2, 1fr)"]}
                 
@@ -335,7 +336,7 @@ export default function Programs(){
             </section>
             <section id="Incubator">
             <Box bg={'#D9D9D9'} py={'7%'}>
-                <Box px={'20%'}>
+                <Box px={['10%','20%']}>
                 <Grid
                 templateColumns={["repeat(1, 1fr)", "repeat(2, 1fr)"]}
                 gap={'10'}

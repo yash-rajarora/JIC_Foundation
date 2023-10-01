@@ -68,8 +68,8 @@ export default function Contact() {
   };
   return (
     <>
-    <Box pt={'7%'}></Box>
-    <Container maxW="full" mt={0} centerContent overflow="hidden">
+    <Box pt={['40%','7%']}></Box>
+    <Container maxW="full" mt={0} centerContent overflow="hidden" mb={['20','0']}>
       <Flex>
         <Box
           bg="#02054B"

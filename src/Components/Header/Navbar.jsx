@@ -12,16 +12,22 @@ import {
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import logo from '../../Assets/logojic.png'
 import { Link } from "react-router-dom";
+import { HamburgerIcon } from "@chakra-ui/icons";
+
 
 function Navbar() {
   const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
+    onToggle(); // Close the mobile navigation menu first
+  
+    setTimeout(() => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }, 300); // Adjust the delay (in milliseconds) as needed
   };
   const { isOpen, onToggle } = useDisclosure(); // Use isOpen to determine if the mobile navigation is open or closed
 
@@ -76,7 +82,7 @@ function Navbar() {
           variant="ghost"
           onClick={onToggle}
         >
-          <ChevronDownIcon />
+          <HamburgerIcon boxSize={6} color={"white"} />
         </Button>
       </Flex>
 
@@ -89,25 +95,29 @@ function Navbar() {
           bg={"#1A2A67"}
         >
           <Stack spacing={4} align="center">
-            <Link to="#about"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}}>About Us</Button></Link>
-            <Link to="JicBlogs"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}}>JIC Blogs</Button></Link>
-            <Link to="/Programs"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}}>Our Program</Button></Link>
-            <Link to="#startup"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}}>Startups</Button></Link>
-            <Link to="#team"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}}>Team</Button></Link>
+            <Link to="/"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}} onClick={onToggle}>Home</Button></Link>
+            <Link to="#about"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}} onClick={() => { scrollToSection('about');}}>About Us</Button></Link>
+            <Link to="JicBlogs"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}} onClick={onToggle}>JIC Blogs</Button></Link>
+            <Link to="/Programs"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}} onClick={onToggle}>Our Program</Button></Link>
+            <Link to="#startup"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}} onClick={() => {scrollToSection('startup'); }}>Startups</Button></Link>
+            <Link to="#team"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}} onClick={() => { scrollToSection('team');}}>Team</Button></Link>
+            <Link to="Contact">
             <Button
               as={'a'}
               fontSize={'sm'}
               fontWeight={600}
               color={'black'}
               bg={'white'}
-              href={'#'}
+              onClick={onToggle}
               _hover={{
                 bg: '#1D2939',
                 color: 'white',
               }}
+              
             >
               Contact Us
             </Button>
+            </Link>
           </Stack>
         </Box>
       </Collapse>
