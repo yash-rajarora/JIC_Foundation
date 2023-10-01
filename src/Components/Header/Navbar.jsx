@@ -14,6 +14,15 @@ import logo from '../../Assets/logojic.png'
 import { Link } from "react-router-dom";
 
 function Navbar() {
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
   const { isOpen, onToggle } = useDisclosure(); // Use isOpen to determine if the mobile navigation is open or closed
 
   return (
@@ -38,11 +47,11 @@ function Navbar() {
           align="center"
           display={{ base: "none", md: "flex" }}
         >
-          <Link to="#about"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}}>About Us</Button></Link>
+          <Link to="#about"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}} onClick={() => scrollToSection('about')}>About Us</Button></Link>
           <Link to="JicBlogs"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}}>JIC Blogs</Button></Link>
           <Link to="/Programs"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}}>Our Program</Button></Link>
-          <Link to="#startup"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}}>Startups</Button></Link>
-          <Link to="#team"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}}>Team</Button></Link>
+          <Link to="#startup"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}} onClick={() => scrollToSection('startup')}>Startups</Button></Link>
+          <Link to="#team"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}} onClick={() => scrollToSection('team')}>Team</Button></Link>
           <Link to="Contact">
           <Button
               as={'a'}

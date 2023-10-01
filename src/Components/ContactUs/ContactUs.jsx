@@ -5,10 +5,8 @@ import {
   Box,
   Heading,
   Text,
-  IconButton,
   Button,
   VStack,
-  HStack,
   Wrap,
   WrapItem,
   FormControl,
@@ -17,17 +15,57 @@ import {
   InputGroup,
   InputLeftElement,
   Textarea,
+  useToast
 } from '@chakra-ui/react'
 import {
   MdPhone,
   MdEmail,
   MdLocationOn,
-  MdFacebook,
   MdOutlineEmail,
 } from 'react-icons/md'
-import { BsGithub, BsDiscord, BsPerson } from 'react-icons/bs'
+import { BsPerson } from 'react-icons/bs'
+import axios from 'axios';
+import React, { useState } from 'react';
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const toast = useToast();
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post(
+        "https://sheetdb.io/api/v1/48bm8winu0jm4",
+        { data: formData },
+        { headers: { Authorization: "Bearer nz9649vx5se3ja7pdlcsivatr0pdzkx6vhefr42i" } }
+      );
+      console.log(res);
+      toast({
+        title: "Form submitted successfully.",
+        description: "Thank You for your response",
+        status: "success",
+        duration: 3000,
+        isClosable: true,
+      });
+    } catch (error) {
+      console.log(error);
+      toast({
+        title: "Error submitting form.",
+        description: "Please try again later.",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+      });
+    }
+  };
   return (
     <>
     <Box pt={'7%'}></Box>
@@ -87,6 +125,7 @@ export default function Contact() {
               <WrapItem>
                 <Box bg="white" borderRadius="lg">
                   <Box m={8} color="#0B0E3F">
+                  <form onSubmit={handleSubmit}>
                     <VStack spacing={5}>
                       <FormControl id="name">
                         <FormLabel>Your Name</FormLabel>
@@ -94,7 +133,7 @@ export default function Contact() {
                           <InputLeftElement pointerEvents="none">
                             <BsPerson color="gray.800" />
                           </InputLeftElement>
-                          <Input type="text" size="md" />
+                          <Input type="text" size="md" name="name" value={formData.name} onChange={handleChange} />
                         </InputGroup>
                       </FormControl>
                       <FormControl id="name">
@@ -103,12 +142,13 @@ export default function Contact() {
                           <InputLeftElement pointerEvents="none">
                             <MdOutlineEmail color="gray.800" />
                           </InputLeftElement>
-                          <Input type="text" size="md" />
+                          <Input type="text" size="md" name="email" value={formData.email} onChange={handleChange}/>
                         </InputGroup>
                       </FormControl>
                       <FormControl id="name">
                         <FormLabel>Message</FormLabel>
                         <Textarea
+                          name="message" value={formData.message} onChange={handleChange}
                           borderColor="gray.300"
                           _hover={{
                             borderRadius: 'gray.300',
@@ -117,11 +157,12 @@ export default function Contact() {
                         />
                       </FormControl>
                       <FormControl id="name" float="right">
-                        <Button variant="solid" bg="#0D74FF" color="white" _hover={{}}>
+                        <Button type='submit' variant="solid" bg="#0D74FF" color="white" _hover={{}}>
                           Send Message
                         </Button>
                       </FormControl>
                     </VStack>
+                    </form>
                   </Box>
                 </Box>
               </WrapItem>
