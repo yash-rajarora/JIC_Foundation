@@ -25,12 +25,12 @@ const ListHeader = ({ children }) => {
   );
 };
 const SocialLink = ({ label, href }) => {
-    return (
-      <Box as="a" href={href} fontWeight="bold" fontSize="lg" color="inherit" _hover={{ color: 'blue.500' }}>
-        {label}
-      </Box>
-    );
-  };
+  return (
+    <Box as="a" href={href} target="_blank" rel="noopener noreferrer" fontWeight="bold" fontSize="lg" color="inherit" _hover={{ color: 'blue.500' }}>
+      {label}
+    </Box>
+  );
+};
 
 
 
@@ -44,6 +44,7 @@ const SocialButton = ({ children, label, href }) => {
       h={10}
       cursor={'pointer'}
       as={'a'}
+      target="_blank" rel="noopener noreferrer"
       href={href}
       display={'inline-flex'}
       alignItems={'center'}

@@ -209,7 +209,7 @@ export default function Programs(){
             </section>
             <section id="Leader">
             <Box bg={'#D9D9D9'} py={'7%'}>
-                <Box px={['10%','20%']}>
+                <Box px={['10%','15%']}>
                 <Grid
                 templateColumns={["repeat(1, 1fr)", "repeat(2, 1fr)"]}
                 gap={'10'}
@@ -235,7 +235,7 @@ export default function Programs(){
                     <Image 
                         src={LeaderTalk}
                         height={'400px'}
-                        width={'400px'}
+                        width={'900px'}
                         borderRadius={"xl"}
                         />
                     </GridItem>
@@ -245,7 +245,7 @@ export default function Programs(){
             </section>
             <section id="Virtual">
             <Box  py={'7%'}>
-                <Box pl={['10%','20%']} pr={['10%','20%']}>
+                <Box pl={['10%','15%']} pr={['10%','15%']}>
                 <Grid
                 templateColumns={["repeat(1, 1fr)", "repeat(2, 1fr)"]}
                 
@@ -254,11 +254,12 @@ export default function Programs(){
                         <Image 
                         src={virtual}
                         height={'400px'}
-                        width={'400px'}
+                        width={'700px'}
                         borderRadius={"xl"}
+                        
                         />
                     </GridItem>
-                    <GridItem>
+                    <GridItem pl={'10'}>
                         <Text fontWeight='700' className='gradient-text1' fontSize={'27'} >
                         Virtual Accelerator
                         </Text>

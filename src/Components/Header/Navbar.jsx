@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{useEffect} from "react";
 import {
   Box,
   Flex,
@@ -31,6 +31,16 @@ function Navbar() {
   };
   const { isOpen, onToggle } = useDisclosure(); // Use isOpen to determine if the mobile navigation is open or closed
 
+  useEffect(() => {
+    const href = window.location.href.substring(
+      window.location.href.lastIndexOf('#') + 1
+    );
+    const element = document.getElementById(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, []);
+
   return (
     <Box
       height='73px'
@@ -53,11 +63,11 @@ function Navbar() {
           align="center"
           display={{ base: "none", md: "flex" }}
         >
-          <Link to="#about"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}} onClick={() => scrollToSection('about')}>About Us</Button></Link>
+          <Link to="/"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}} onClick={() => scrollToSection('about')}>About Us</Button></Link>
           <Link to="JicBlogs"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}}>JIC Blogs</Button></Link>
           <Link to="/Programs"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}}>Our Program</Button></Link>
-          <Link to="#startup"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}} onClick={() => scrollToSection('startup')}>Startups</Button></Link>
-          <Link to="#team"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}} onClick={() => scrollToSection('team')}>Team</Button></Link>
+          <Link to="/"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}} onClick={() => scrollToSection('startup')}>Startups</Button></Link>
+          <Link to="/"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}} onClick={() => scrollToSection('team')}>Team</Button></Link>
           <Link to="Contact">
           <Button
               as={'a'}

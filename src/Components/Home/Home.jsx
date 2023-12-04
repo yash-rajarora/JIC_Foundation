@@ -576,8 +576,8 @@ function HomePage() {
       {/* Incubated Startups Section */}
 
       <section id="startup">
-        <Box bg="#F2F4F7">
-          <Box pt={14} pb={[0, 14]} textAlign="center">
+        <Box bg="#F2F4F7"height={'100vh'}>
+          <Box pt={14} pb={[0, 14]} textAlign="center" >
             <Text
               fontSize={["40", "65"]}
               fontWeight="700"
