@@ -1,6 +1,7 @@
 // src/HomePage.js
 import React, { useState, useEffect } from "react";
 import "./css/home.css";
+import { motion } from 'framer-motion';
 import {
   Box,
   Heading,
@@ -15,18 +16,26 @@ import {
   GridItem,
   Card,
   CardBody,
-  Divider,
   Button,
+  SimpleGrid
 } from "@chakra-ui/react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Link } from "react-router-dom";
 import tata from "../../Assets/06302022-image1-equitymaster.jpg";
+
 
 import team1 from "../../Assets/P1.png";
 import team2 from "../../Assets/P2.png";
 import team3 from "../../Assets/P3.png";
 import team4 from "../../Assets/P4.png";
 import team5 from "../../Assets/P5.png";
+
+import JIC1 from "../../Assets/j1.webp";
+import JIC2 from "../../Assets/j2.webp";
+import JIC3 from "../../Assets/j3.webp";
+import JIC4 from "../../Assets/j4.webp";
+import JIC5 from "../../Assets/j5.jpg";
+import JIC6 from "../../Assets/j6.jpg";
 
 import back from "../../Assets/bg.png";
 import backm from "../../Assets/bgmobile.jpg";
@@ -47,6 +56,8 @@ import startup11 from "../../Assets/startups/11.png";
 import startup12 from "../../Assets/startups/12.png";
 import startup13 from "../../Assets/startups/13.png";
 import startup14 from "../../Assets/startups/14.png";
+
+const MotionBox = motion(Box);
 
 function HomePage() {
   const INTERVAL = 1400;
@@ -113,6 +124,11 @@ function HomePage() {
       </Flex>
     );
   };
+  const images = [
+    JIC1,JIC2,JIC3,JIC4,JIC5,JIC6
+    
+  ];
+  
   return (
     <Box>
       {/* Hero Section */}
@@ -121,7 +137,7 @@ function HomePage() {
         h={"100vh"}
         pb={10}
         backgroundImage={[`url(${backm})`, `url(${back})`]}
-        backgroundSize={["contain", "fit"]}
+        backgroundSize={["contain", "100%"]}
         backgroundPosition={" "}
       >
         <VStack
@@ -302,6 +318,48 @@ function HomePage() {
               </Text>
             </Box>
           </Box>
+        </Box>
+      </section>
+
+      {/* Jic Workspace Section */}
+
+      <section id="OurProgram">
+        <Box bgGradient="linear(to-b,  #0491F6 0%, #1F347A 68.02%, #1A2A67 100%)">
+          <Box pt={14} pb={[0, 14]}>
+            <Container>
+              <Heading as="h1" size="3xl" mb={8} textAlign="center">
+                <Text fontWeight="700" color={"white"} fontSize={["35", "60"]}>
+                  JIC WORKSPACE
+                </Text>
+              </Heading>
+            </Container>
+          </Box>
+          <MotionBox
+            as="section"
+            p={10}
+            mb={10}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            
+            <SimpleGrid columns={[1, 2, 3]} spacing={6}>
+              {images.map((imageUrl, index) => (
+                <MotionBox
+                  key={index}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  overflow="hidden"
+                  borderRadius="md"
+                  boxShadow="lg"
+                >
+                  <Image src={imageUrl} alt={`Workspace Image ${index + 1}`} />
+                </MotionBox>
+              ))}
+            </SimpleGrid>
+          </MotionBox>
+          
+          
         </Box>
       </section>
 
@@ -755,6 +813,7 @@ function HomePage() {
           </Box>
         </Box>
       </section>
+      
     </Box>
   );
 }

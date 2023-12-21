@@ -12,6 +12,7 @@ import Blog2 from './Components/Blog Page/Blogs/blog2';
 import Blog3 from './Components/Blog Page/Blogs/blog3';
 import ScrollToTop from './Components/ScrollToTop';
 import Contact from './Components/ContactUs/ContactUs';
+import Magnate3 from './Components/Magnate/Maganate3';
 function App() {
   window.addEventListener('contextmenu', e => {
     e.preventDefault();
@@ -29,6 +30,7 @@ function App() {
         <Route element={<Blog1/>} exact path='/Blog1' />
         <Route element={<Blog2/>} exact path='/Blog2' />
         <Route element={<Blog3/>} exact path='/Blog3' />
+        <Route element={<Magnate3/>} exact path='/Magnate' />
       </Routes>
       <Footer />
     </Router>

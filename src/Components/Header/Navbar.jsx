@@ -68,6 +68,7 @@ function Navbar() {
           <Link to="/Programs"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}}>Our Program</Button></Link>
           <Link to="/"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}} onClick={() => scrollToSection('startup')}>Startups</Button></Link>
           <Link to="/"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}} onClick={() => scrollToSection('team')}>Team</Button></Link>
+          <Link to="Magnate"><Button bg={"transparent"} color='white' _hover={{bg:'transparent'}}>MAGNATE</Button></Link>
           <Link to="Contact">
           <Button
               as={'a'}
