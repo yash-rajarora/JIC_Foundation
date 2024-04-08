@@ -56,6 +56,7 @@ import startup11 from "../../Assets/startups/11.png";
 import startup12 from "../../Assets/startups/12.png";
 import startup13 from "../../Assets/startups/13.png";
 import startup14 from "../../Assets/startups/14.png";
+import startup15 from "../../Assets/startups/15.png";
 
 const MotionBox = motion(Box);
 
@@ -784,6 +785,16 @@ function HomePage() {
                   transition="transform 0.3s"
                 >
                   <Image src={startup14} />
+                </Box>
+              </GridItem>
+              <GridItem>
+                <Box
+                  as="div"
+                  _hover={{ transform: "scale(1.1)" }}
+                  _active={{ transform: "scale(0.9)" }}
+                  transition="transform 0.3s"
+                >
+                  <Image src={startup15}/>
                 </Box>
               </GridItem>
             </Grid>
